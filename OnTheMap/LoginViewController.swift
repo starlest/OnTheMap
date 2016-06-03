@@ -28,6 +28,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         setUpFacebookLoginButton()
     }
 
+    
     // MARK: FBSDKLoginButtonDelegate Protocols
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
@@ -78,6 +79,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     private func completeLogin() {
         print("logged in!")
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+        presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func signupButtonPressed(sender: AnyObject) {

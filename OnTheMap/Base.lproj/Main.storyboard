@@ -134,7 +134,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="4hs-Io-593">
             <objects>
-                <tabBarController id="Ihe-So-oes" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="Ihe-So-oes" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="igv-g9-TIx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -146,7 +146,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isX-U3-Mwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="937" y="438"/>
+            <point key="canvasLocation" x="933" y="417"/>
         </scene>
         <!--Item-->
         <scene sceneID="8Ie-Xg-txR">
