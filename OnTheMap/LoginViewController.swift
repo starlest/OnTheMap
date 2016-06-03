@@ -33,7 +33,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         /* Make sure to proceed only if an access token is successfully retrieved */
-        if result.token != nil {
+        if Client.sharedInstance().isLoggedInThroughFacebook() {
             startAuthentication(throughFacebook: true)
         }
     }
@@ -45,11 +45,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBAction func udacityLoginButtonPressed(sender: AnyObject) {
         if !areLoginFieldsFilled() {
-            showAlert("Missing Field(s)", message: "Please enter both your username and password.")
+            Client.sharedInstance().showAlert(hostController: self, title: "Missing Field(s)", message: "Please enter both your username and password.")
             return
         }
         if !Reachability.isConnectedToNetwork() {
-            showAlert("No Connection", message: "The Internet appears to be offline")
+            Client.sharedInstance().showAlert(hostController: self, title: "No Connection", message: "The Internet appears to be offline")
             return
         }
         startAuthentication(throughFacebook: false)
@@ -64,12 +64,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 } else {
                     if error?.code == Client.ErrorCodes.InvalidLoginCredentials {
                         let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account." : "Wrong username or password."
-                        self.showAlert("Login Failed", message: message)
+                        Client.sharedInstance().showAlert(hostController: self, title: "Login Failed", message: message)
                     } else if error?.code == Client.ErrorCodes.FailedConnectionToServer {
-                        self.showAlert("Connection Failed", message: "Failed to connect to server.")
+                        Client.sharedInstance().showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server.")
                     } else {
                         print(error?.code)
-                        self.showAlert("Unknown Error", message: "Unkown error encountered. Please try again later.")
+                        Client.sharedInstance()
+                            .showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later.")
                     }
                 }
                 self.setUIEnabled(true)
@@ -78,7 +79,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     private func completeLogin() {
-        print("logged in!")
         let controller = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
         presentViewController(controller, animated: true, completion: nil)
     }

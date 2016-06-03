@@ -38,4 +38,44 @@ extension Client {
         
         completionHandlerForConvertData(result: parsedResult, error: nil)
     }
+    
+    func isLoggedInThroughFacebook() -> Bool {
+        return FBSDKAccessToken.currentAccessToken() != nil
+    }
+    
+    func attemptToLogoutFacebook() {
+        if (isLoggedInThroughFacebook()) {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+    }
+    
+    func showAlert(hostController hostController: UIViewController, title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertAction = UIAlertAction(title: "Dimiss", style: .Default, handler: { (UIAlertAction) in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        })
+        alert.addAction(alertAction)
+        hostController.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showLogoutConfirmationAlert(hostController hostController: UIViewController, confirmationHandler: (flag: Bool) -> Void) {
+        let alert = UIAlertController(title: "Confirmation", message: "Confirm?", preferredStyle: .ActionSheet)
+        
+        let yesAlertAction = UIAlertAction(title: "Yes", style: .Default, handler: { (UIAlertAction) in
+            alert.dismissViewControllerAnimated(true, completion: {
+                confirmationHandler(flag: true)
+            })
+        })
+        
+        let noAlertAction = UIAlertAction(title: "No", style: .Default, handler: { (UIAlertAction) in
+            alert.dismissViewControllerAnimated(true, completion: {
+                confirmationHandler(flag: false)
+            })
+        })
+        
+        alert.addAction(yesAlertAction)
+        alert.addAction(noAlertAction)
+        hostController.presentViewController(alert, animated: true, completion: nil)
+    }
 }

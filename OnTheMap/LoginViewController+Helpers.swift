@@ -17,10 +17,7 @@ extension LoginViewController {
     }
     
     func setUpFacebookLoginButton() {
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            let loginManager = FBSDKLoginManager()
-            loginManager.logOut()
-        }
+        Client.sharedInstance().attemptToLogoutFacebook()
         facebookLoginButton.delegate = self
         facebookLoginButton.readPermissions = ["email"]
     }
@@ -30,15 +27,6 @@ extension LoginViewController {
             return false
         }
         return emailTextField.text?.characters.count > 0 && passwordTextField.text?.characters.count > 0
-    }
-    
-    func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let alertAction = UIAlertAction(title: "OK", style: .Default, handler: { (UIAlertAction) in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        })
-        alert.addAction(alertAction)
-        presentViewController(alert, animated: true, completion: nil)
     }
     
     func setUIEnabled(enabled: Bool) {
