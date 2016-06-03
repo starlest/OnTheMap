@@ -6,12 +6,20 @@
       <sourceFolder url="file://$MODULE_DIR$/OnTheMapTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMapUITests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMapUITests/OnTheMapUITests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Base.lproj/Main.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/LoginViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Reachability.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/LoginViewController+Helpers.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Client+Constants.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/LoginViewController+UIConfigurations.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Client.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Client+Helpers.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/GCDBlackBox.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/LoginViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Client+Convenience.swift" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

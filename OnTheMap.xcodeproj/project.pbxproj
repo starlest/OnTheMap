@@ -14,6 +14,16 @@
 		6D7F8DCB1CFF740000D5C5BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F8DC91CFF740000D5C5BC /* LaunchScreen.storyboard */; };
 		6D7F8DD61CFF740100D5C5BC /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DD51CFF740100D5C5BC /* OnTheMapTests.swift */; };
 		6D7F8DE11CFF740100D5C5BC /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DE01CFF740100D5C5BC /* OnTheMapUITests.swift */; };
+		6D7F8DF31D004B9400D5C5BC /* LoginViewController+UIConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DF21D004B9400D5C5BC /* LoginViewController+UIConfigurations.swift */; };
+		6D7F8DF51D004FD600D5C5BC /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DF41D004FD600D5C5BC /* Client.swift */; };
+		6D7F8DF81D00519300D5C5BC /* Client+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DF71D00519300D5C5BC /* Client+Constants.swift */; };
+		6D7F8DFA1D0052D100D5C5BC /* Client+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DF91D0052D100D5C5BC /* Client+Helpers.swift */; };
+		6D7F8DFC1D0054BC00D5C5BC /* Client+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DFB1D0054BC00D5C5BC /* Client+Convenience.swift */; };
+		6D7F8DFE1D00899100D5C5BC /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DFD1D00899100D5C5BC /* GCDBlackBox.swift */; };
+		6D7F8E001D008CDB00D5C5BC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DFF1D008CDB00D5C5BC /* Reachability.swift */; };
+		6D7F8E021D00A42400D5C5BC /* LoginViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8E011D00A42400D5C5BC /* LoginViewController+Helpers.swift */; };
+		6D7F8E051D0107DC00D5C5BC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F8E031D0107DB00D5C5BC /* FBSDKCoreKit.framework */; };
+		6D7F8E061D0107DC00D5C5BC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F8E041D0107DC00D5C5BC /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,16 @@
 		6D7F8DDC1CFF740100D5C5BC /* OnTheMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7F8DE01CFF740100D5C5BC /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		6D7F8DE21CFF740100D5C5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D7F8DF21D004B9400D5C5BC /* LoginViewController+UIConfigurations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewController+UIConfigurations.swift"; sourceTree = "<group>"; };
+		6D7F8DF41D004FD600D5C5BC /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		6D7F8DF71D00519300D5C5BC /* Client+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+Constants.swift"; sourceTree = "<group>"; };
+		6D7F8DF91D0052D100D5C5BC /* Client+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+Helpers.swift"; sourceTree = "<group>"; };
+		6D7F8DFB1D0054BC00D5C5BC /* Client+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+Convenience.swift"; sourceTree = "<group>"; };
+		6D7F8DFD1D00899100D5C5BC /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		6D7F8DFF1D008CDB00D5C5BC /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		6D7F8E011D00A42400D5C5BC /* LoginViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Helpers.swift"; sourceTree = "<group>"; };
+		6D7F8E031D0107DB00D5C5BC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		6D7F8E041D0107DC00D5C5BC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7F8E061D0107DC00D5C5BC /* FBSDKLoginKit.framework in Frameworks */,
+				6D7F8E051D0107DC00D5C5BC /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,11 +120,11 @@
 			isa = PBXGroup;
 			children = (
 				6D7F8DC01CFF740000D5C5BC /* AppDelegate.swift */,
-				6D7F8DC21CFF740000D5C5BC /* LoginViewController.swift */,
-				6D7F8DC41CFF740000D5C5BC /* Main.storyboard */,
-				6D7F8DC71CFF740000D5C5BC /* Assets.xcassets */,
-				6D7F8DC91CFF740000D5C5BC /* LaunchScreen.storyboard */,
-				6D7F8DCC1CFF740000D5C5BC /* Info.plist */,
+				6D7F8DFD1D00899100D5C5BC /* GCDBlackBox.swift */,
+				6D7F8DFF1D008CDB00D5C5BC /* Reachability.swift */,
+				6D7F8DF01D004B5500D5C5BC /* Models */,
+				6D7F8DEE1D004B3300D5C5BC /* View Controllers */,
+				6D7F8DEF1D004B4100D5C5BC /* Supporting Files */,
 			);
 			path = OnTheMap;
 			sourceTree = "<group>";
@@ -123,6 +145,56 @@
 				6D7F8DE21CFF740100D5C5BC /* Info.plist */,
 			);
 			path = OnTheMapUITests;
+			sourceTree = "<group>";
+		};
+		6D7F8DEE1D004B3300D5C5BC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F8DF11D004B6600D5C5BC /* Login */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6D7F8DEF1D004B4100D5C5BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F8E031D0107DB00D5C5BC /* FBSDKCoreKit.framework */,
+				6D7F8E041D0107DC00D5C5BC /* FBSDKLoginKit.framework */,
+				6D7F8DC41CFF740000D5C5BC /* Main.storyboard */,
+				6D7F8DC71CFF740000D5C5BC /* Assets.xcassets */,
+				6D7F8DC91CFF740000D5C5BC /* LaunchScreen.storyboard */,
+				6D7F8DCC1CFF740000D5C5BC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D7F8DF01D004B5500D5C5BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F8DF61D00517D00D5C5BC /* Client */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6D7F8DF11D004B6600D5C5BC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F8DC21CFF740000D5C5BC /* LoginViewController.swift */,
+				6D7F8DF21D004B9400D5C5BC /* LoginViewController+UIConfigurations.swift */,
+				6D7F8E011D00A42400D5C5BC /* LoginViewController+Helpers.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		6D7F8DF61D00517D00D5C5BC /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F8DF41D004FD600D5C5BC /* Client.swift */,
+				6D7F8DFB1D0054BC00D5C5BC /* Client+Convenience.swift */,
+				6D7F8DF91D0052D100D5C5BC /* Client+Helpers.swift */,
+				6D7F8DF71D00519300D5C5BC /* Client+Constants.swift */,
+			);
+			name = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +329,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7F8DFE1D00899100D5C5BC /* GCDBlackBox.swift in Sources */,
+				6D7F8DFA1D0052D100D5C5BC /* Client+Helpers.swift in Sources */,
+				6D7F8DF31D004B9400D5C5BC /* LoginViewController+UIConfigurations.swift in Sources */,
 				6D7F8DC31CFF740000D5C5BC /* LoginViewController.swift in Sources */,
+				6D7F8DFC1D0054BC00D5C5BC /* Client+Convenience.swift in Sources */,
+				6D7F8E001D008CDB00D5C5BC /* Reachability.swift in Sources */,
+				6D7F8E021D00A42400D5C5BC /* LoginViewController+Helpers.swift in Sources */,
+				6D7F8DF81D00519300D5C5BC /* Client+Constants.swift in Sources */,
+				6D7F8DF51D004FD600D5C5BC /* Client.swift in Sources */,
 				6D7F8DC11CFF740000D5C5BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +484,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.OnTheMap;
@@ -418,6 +502,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.OnTheMap;
@@ -491,6 +579,7 @@
 				6D7F8DE71CFF740100D5C5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D7F8DE81CFF740100D5C5BC /* Build configuration list for PBXNativeTarget "OnTheMapTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +588,7 @@
 				6D7F8DEA1CFF740100D5C5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D7F8DEB1CFF740100D5C5BC /* Build configuration list for PBXNativeTarget "OnTheMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +597,7 @@
 				6D7F8DED1CFF740100D5C5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
