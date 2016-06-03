@@ -29,19 +29,28 @@ extension Client {
 
     // MARK: Udacity Parameter Keys
     struct UdacityParameterKeys {
-        static let Username = "username"
-        static let Password = "Password"
     }
     
     // MARK: Udacity Parameter Values
     struct UdacityParameterValues {
     }
     
-    // MARK: Udacity Reponse Keys
+    // MARK: Udacity Body Keys
+    struct UdacityJSONBodyKeys {
+        // MARK: Authorization
+        static let Udacity = "udacity"
+        static let Username = "username"
+        static let Password = "password"
+        static let FacebookMobile = "facebook_mobile"
+        static let FacebookAcessToken = "acesss_token"
+    }
+    
+    // MARK: Udacity Response Keys
     struct UdacityJSONResponseKeys {
         
         // MARK: Authorization
         static let Session = "session"
+        static let SessionID = "id"
     }
     
     // MARK: Error Codes 

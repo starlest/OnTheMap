@@ -72,15 +72,12 @@
                                     <action selector="signupButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5lW-4h-YIB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoP-DL-O9p" userLabel="Facebook Login">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoP-DL-O9p" userLabel="Facebook Login" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="200" y="395" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZDH-H2-8me"/>
                                 </constraints>
                                 <state key="normal" image="FacebookLoginButton"/>
-                                <connections>
-                                    <action selector="facebookLoginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukX-ni-7Sw"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Udacity" translatesAutoresizingMaskIntoConstraints="NO" id="gJF-4K-uzk">
                                 <rect key="frame" x="275" y="147" width="50" height="50"/>
@@ -124,7 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="gs5-08-Crj" id="uyr-UF-bHb"/>
-                        <outlet property="facebookLoginButton" destination="FoP-DL-O9p" id="fV7-Bg-8Tq"/>
+                        <outlet property="facebookLoginButton" destination="FoP-DL-O9p" id="Kg0-GQ-7Gf"/>
                         <outlet property="passwordTextField" destination="AIA-f5-Egh" id="odC-dp-dqx"/>
                         <outlet property="signupButton" destination="SMR-zJ-Fk7" id="r9o-YK-tmt"/>
                         <outlet property="udacityButtonLoginButton" destination="tIk-ko-cXb" id="JcU-Q1-jtv"/>
@@ -133,6 +130,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="304" y="417"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4hs-Io-593">
+            <objects>
+                <tabBarController id="Ihe-So-oes" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="igv-g9-TIx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0Ik-n9-Dyw" kind="relationship" relationship="viewControllers" id="zS4-IW-51g"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isX-U3-Mwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="438"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="8Ie-Xg-txR">
+            <objects>
+                <viewController id="0Ik-n9-Dyw" customClass="MapTabViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CNo-r7-3Lf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gvy-ql-Hke"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cuu-pU-4A7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-TY-Edg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Logout" id="uFN-NP-P2E"/>
+                                </items>
+                                <color key="barTintColor" red="0.93725490196078431" green="0.69019607843137254" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="F6X-NH-k7R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8v-9q-URw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="364"/>
         </scene>
     </scenes>
     <resources>

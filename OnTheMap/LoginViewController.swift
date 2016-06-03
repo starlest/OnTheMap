@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     // MARK: Properties
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var udacityButtonLoginButton: UIButton!
-    @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     @IBOutlet weak var signupButton: UIButton!    
     
     var activityView: UIActivityIndicatorView!
@@ -24,13 +24,20 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-        activityView.center = view.center
-        view.addSubview(activityView)
+        setUpActivityView()
+        setUpFacebookLoginButton()
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    // MARK: FBSDKLoginButtonDelegate Protocols
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        /* Make sure to proceed only if an access token is successfully retrieved */
+        if result.token != nil {
+            startAuthentication(throughFacebook: true)
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
     }
 
     // MARK: Actions
@@ -40,24 +47,27 @@ class LoginViewController: UIViewController {
             showAlert("Missing Field(s)", message: "Please enter both your username and password.")
             return
         }
-        
         if !Reachability.isConnectedToNetwork() {
             showAlert("No Connection", message: "The Internet appears to be offline")
             return
         }
-
+        startAuthentication(throughFacebook: false)
+    }
+    
+    private func startAuthentication(throughFacebook throughFacebook: Bool) {
         setUIEnabled(false)
-        
-        Client.sharedInstance().authenticateWithViewController(self) { (success, error) in
+        Client.sharedInstance().authenticateWithViewController(self, throughFacebook: throughFacebook) { (success, error) in
             performUIUpdatesOnMain({
                 if success {
                     self.completeLogin()
                 } else {
                     if error?.code == Client.ErrorCodes.InvalidLoginCredentials {
-                        self.showAlert("Login Failed", message: "Wrong username or password.")
+                        let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account." : "Wrong username or password."
+                        self.showAlert("Login Failed", message: message)
                     } else if error?.code == Client.ErrorCodes.FailedConnectionToServer {
                         self.showAlert("Connection Failed", message: "Failed to connect to server.")
                     } else {
+                        print(error?.code)
                         self.showAlert("Unknown Error", message: "Unkown error encountered. Please try again later.")
                     }
                 }
@@ -66,7 +76,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func facebookLoginButtonPressed(sender: AnyObject) {
+    private func completeLogin() {
+        print("logged in!")
     }
     
     @IBAction func signupButtonPressed(sender: AnyObject) {

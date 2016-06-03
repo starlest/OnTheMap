@@ -16,10 +16,8 @@ class Client : NSObject {
     let session = NSURLSession.sharedSession()
     
     // authentication state
-    var requestToken: String? = nil
     var sessionID: String? = nil
-    var userID: Int? = nil
-
+    
     // MARK: Shared Instance
 
     static func sharedInstance() -> Client {
@@ -52,7 +50,7 @@ class Client : NSObject {
         
         let request = NSMutableURLRequest(URL: createUdacityURLFromParameters(parameters, withPathExtension: method))
         setRequestHTTPPOSTSettings(request, jsonBody: jsonBody)
-
+       
         /* Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
@@ -70,7 +68,8 @@ class Client : NSObject {
             /* GUARD: Did we get a successful 2xx response? */
             guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
                 var errorCode = ((response as? NSHTTPURLResponse)?.statusCode)!
-                if (errorCode != 403) {
+                print(errorCode)
+                if (errorCode >= 500 && errorCode <= 599) {
                     errorCode = errorCode / 100
                 }
                 sendError("Your request returned a status code other than 2xx! \(errorCode)", errorCode: errorCode)

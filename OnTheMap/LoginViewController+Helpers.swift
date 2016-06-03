@@ -10,6 +10,21 @@ import Foundation
 
 extension LoginViewController {
     
+    func setUpActivityView() {
+        activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        activityView.center = view.center
+        view.addSubview(activityView)
+    }
+    
+    func setUpFacebookLoginButton() {
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+        facebookLoginButton.delegate = self
+        facebookLoginButton.readPermissions = ["email"]
+    }
+    
     func areLoginFieldsFilled() -> Bool {
         if emailTextField.text == nil || passwordTextField.text == nil {
             return false
@@ -24,5 +39,19 @@ extension LoginViewController {
         })
         alert.addAction(alertAction)
         presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func setUIEnabled(enabled: Bool) {
+        udacityButtonLoginButton.enabled = enabled
+        facebookLoginButton.enabled = enabled
+        signupButton.enabled = enabled
+        emailTextField.enabled = enabled
+        passwordTextField.enabled = enabled
+        
+        if !enabled {
+            activityView.startAnimating()
+        } else {
+            activityView.stopAnimating()
+        }
     }
 }
