@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9efd15ca-816b-4d59-8d9f-e540dca48292" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/OnTheMap/Pin.swift" afterPath="$PROJECT_DIR$/OnTheMap/StudentLocation.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OnTheMap.iml" afterPath="$PROJECT_DIR$/.idea/OnTheMap.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/AppDelegate.swift" afterPath="$PROJECT_DIR$/OnTheMap/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" afterPath="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Client+Convenience.swift" afterPath="$PROJECT_DIR$/OnTheMap/Client+Convenience.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/MapTabViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/MapTabViewController.swift" />
-    </list>
+    <list default="true" id="9efd15ca-816b-4d59-8d9f-e540dca48292" name="Default" comment="" />
     <ignored path="OnTheMap.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,9 +27,9 @@
             <state relative-caret-position="877">
               <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
-                <element signature="e#4225#5399#0" expanded="false" />
-                <element signature="e#5405#6449#0" expanded="false" />
-                <element signature="e#6504#7657#0" expanded="false" />
+                <element signature="e#4226#5400#0" expanded="false" />
+                <element signature="e#5406#6450#0" expanded="false" />
+                <element signature="e#6505#7658#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -49,9 +38,11 @@
       <file leaf-file-name="StudentLocation.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnTheMap/StudentLocation.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="532">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+              <folding>
+                <marker date="1465068889000" expanded="true" signature="1039:1041" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -290,10 +281,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="140" y="43" width="1400" height="932" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -328,10 +319,10 @@
         <state relative-caret-position="994">
           <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
           <folding>
-            <marker date="1465058603000" expanded="true" signature="228:3539" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="654:752" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="3358:3365" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="3359:3365" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="228:1939" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="654:752" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="1758:1765" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="1759:1765" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -349,9 +340,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4225#5399#0" expanded="false" />
-            <element signature="e#5405#6449#0" expanded="false" />
-            <element signature="e#6504#7657#0" expanded="false" />
+            <element signature="e#4226#5400#0" expanded="false" />
+            <element signature="e#5406#6450#0" expanded="false" />
+            <element signature="e#6505#7658#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -382,10 +373,10 @@
         <state relative-caret-position="770">
           <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
           <folding>
-            <marker date="1465058603000" expanded="true" signature="228:3539" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="654:752" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="3358:3365" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="3359:3365" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="228:1939" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="654:752" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="1758:1765" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="1759:1765" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -403,9 +394,9 @@
         <state relative-caret-position="630">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#4225#5399#0" expanded="false" />
-            <element signature="e#5405#6449#0" expanded="false" />
-            <element signature="e#6504#7657#0" expanded="false" />
+            <element signature="e#4226#5400#0" expanded="false" />
+            <element signature="e#5406#6450#0" expanded="false" />
+            <element signature="e#6505#7658#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,10 +447,10 @@
         <state relative-caret-position="980">
           <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
           <folding>
-            <marker date="1465058603000" expanded="true" signature="228:3539" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="654:752" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="3358:3365" ph="{...}" />
-            <marker date="1465058603000" expanded="true" signature="3359:3365" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="228:1939" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="654:752" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="1758:1765" ph="{...}" />
+            <marker date="1465069181000" expanded="true" signature="1759:1765" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -469,18 +460,20 @@
         <state relative-caret-position="877">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
-            <element signature="e#4225#5399#0" expanded="false" />
-            <element signature="e#5405#6449#0" expanded="false" />
-            <element signature="e#6504#7657#0" expanded="false" />
+            <element signature="e#4226#5400#0" expanded="false" />
+            <element signature="e#5406#6450#0" expanded="false" />
+            <element signature="e#6505#7658#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnTheMap/StudentLocation.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="532">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <marker date="1465068889000" expanded="true" signature="1039:1041" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

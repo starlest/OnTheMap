@@ -207,7 +207,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="F6X-NH-k7R"/>
                     <connections>
+                        <outlet property="logoutButton" destination="3ci-yB-B4D" id="6nW-oM-Edb"/>
                         <outlet property="mapView" destination="De4-4p-g96" id="cou-Bc-jxQ"/>
+                        <outlet property="pinButton" destination="3pj-Mi-aNT" id="XyI-2s-fK4"/>
                         <outlet property="refreshButton" destination="CPS-lk-52m" id="Hdp-xp-oEJ"/>
                     </connections>
                 </viewController>
@@ -218,7 +220,7 @@
         <!--List-->
         <scene sceneID="QWx-8Y-MQb">
             <objects>
-                <viewController id="ejV-Qm-5sG" sceneMemberID="viewController">
+                <viewController id="ejV-Qm-5sG" customClass="TableTabViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q2B-vL-MmC"/>
                         <viewControllerLayoutGuide type="bottom" id="pzr-iS-4qP"/>
@@ -237,18 +239,18 @@
                                     <navigationItem title="On The Map" id="R99-Oa-GsP">
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="48G-n9-jbk">
                                             <connections>
-                                                <action selector="logoutButtonPressed:" destination="0Ik-n9-Dyw" id="JTB-2a-Rvf"/>
+                                                <action selector="logoutButtonPressed:" destination="ejV-Qm-5sG" id="0uC-9e-Cv6"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem systemItem="refresh" id="JTU-yB-bwH">
                                                 <connections>
-                                                    <action selector="refreshButtonPressed:" destination="0Ik-n9-Dyw" id="yIk-57-GUo"/>
+                                                    <action selector="refreshButtonPressed:" destination="ejV-Qm-5sG" id="biG-j3-Wqw"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem image="pin" id="Atk-6H-0kE">
                                                 <connections>
-                                                    <action selector="pinButtonPressed:" destination="0Ik-n9-Dyw" id="lcZ-Lh-159"/>
+                                                    <action selector="pinButtonPressed:" destination="ejV-Qm-5sG" id="mTW-g4-nPw"/>
                                                 </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
@@ -264,6 +266,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="list" id="u5f-1J-Sba"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="48G-n9-jbk" id="oxH-AR-Zmc"/>
+                        <outlet property="pinButton" destination="Atk-6H-0kE" id="lVE-Ey-5WC"/>
+                        <outlet property="refreshButton" destination="JTU-yB-bwH" id="GLA-I5-OKW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqG-v0-Wdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

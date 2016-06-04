@@ -14,6 +14,8 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     // MARK: Properties
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var pinButton: UIBarButtonItem!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     var activityView: UIActivityIndicatorView!
@@ -69,14 +71,21 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     // MARK: Actions
     
     @IBAction func logoutButtonPressed(sender: AnyObject) {
-        Client.showLogoutConfirmationAlert(hostController: self) { (flag) in
-            if flag {
-                Client.sharedInstance().attemptToEndSession({ (success, error) in
-                    if success {
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    } else {
-                        Client.showAlert(hostController: self, title: "Logout Failed", message: "There was an error while logging out. \n Error Code: \(error!.code)")
+        
+        enableUI(false)
+        
+        Client.attemptToLogOut(hostController: self) { (success, error) in
+            
+            if success {
+                performUIUpdatesOnMain({ 
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
+            } else {
+                performUIUpdatesOnMain({
+                    if let error = error {
+                        Client.showAlert(hostController: self, title: "Logout Failed", message: "There was an error while logging out. \n Error Code: \(error.code)")
                     }
+                    self.enableUI(true)
                 })
             }
         }

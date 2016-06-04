@@ -88,17 +88,23 @@ extension Client {
         hostController.presentViewController(alert, animated: true, completion: nil)
     }
     
-    static func showLogoutConfirmationAlert(hostController hostController: UIViewController, confirmationHandler: (flag: Bool) -> Void) {
+    static func attemptToLogOut(hostController hostController: UIViewController, completionHandler: (success: Bool, error: NSError?) -> Void) {
         let alert = UIAlertController(title: nil, message: "Confirm logging out?", preferredStyle: .ActionSheet)
         
         let yesAlertAction = UIAlertAction(title: "Yes", style: .Default, handler: { (UIAlertAction) in
             alert.dismissViewControllerAnimated(true, completion: nil)
-            confirmationHandler(flag: true)
+            Client.sharedInstance().attemptToEndSession({ (success, error) in
+                if success {
+                    completionHandler(success: true, error: nil)
+                } else {
+                    completionHandler(success: false, error: error)
+                }
+            })
         })
         
         let noAlertAction = UIAlertAction(title: "No", style: .Default, handler: { (UIAlertAction) in
             alert.dismissViewControllerAnimated(true, completion: nil)
-            confirmationHandler(flag: false)
+            completionHandler(success: false, error: nil)
         })
         
         alert.addAction(yesAlertAction)
