@@ -53,6 +53,17 @@ extension Client {
         static let SessionID = "id"
     }
     
+    // MARK: HTML Header Fields
+    struct HTMLHeaderFields {
+        static let Accept = "Accept"
+        static let ContentType = "Content-Type"
+    }
+    
+    // MARK: HTML Header Values
+    struct HTMLHeaderValues {
+        static let ApplicationJSON = "application/json"
+    }
+    
     // MARK: Error Codes 
     struct ErrorCodes {
         static let FailedConnectionToServer = 5

@@ -27,12 +27,6 @@ class Client : NSObject {
         return Singleton.sharedInstance
     }
 
-    // MARK: Initializers
-
-    override init() {
-        super.init()
-    }
-
     // MARK: GET
     func taskForGetMethod(method: String, parameters: [String:AnyObject], completionHandlerForGet: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
@@ -46,10 +40,10 @@ class Client : NSObject {
     }
     
     // MARK: POST
-    func taskForPostMethod(method: String, parameters: [String:AnyObject], jsonBody: String, completionHandlerForPOST: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    func taskForPostMethod(method: String, parameters: [String:AnyObject], htmlHeaderFields: [String:String], jsonBody: String, completionHandlerForPOST: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         let request = NSMutableURLRequest(URL: createUdacityURLFromParameters(parameters, withPathExtension: method))
-        setRequestHTTPPOSTSettings(request, jsonBody: jsonBody)
+        setRequestHTTPPOSTSettings(request, htmlHeaderFields: htmlHeaderFields, jsonBody: jsonBody)
        
         /* Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
@@ -68,10 +62,12 @@ class Client : NSObject {
             /* GUARD: Did we get a successful 2xx response? */
             guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
                 var errorCode = ((response as? NSHTTPURLResponse)?.statusCode)!
-                print(errorCode)
+                
+                /* Group 5xx response as server side error under error code 5 */
                 if (errorCode >= 500 && errorCode <= 599) {
                     errorCode = errorCode / 100
                 }
+                
                 sendError("Your request returned a status code other than 2xx! \(errorCode)", errorCode: errorCode)
                 return
             }
@@ -91,12 +87,5 @@ class Client : NSObject {
         task.resume()
         
         return task
-    }
-    
-    private func setRequestHTTPPOSTSettings(request: NSMutableURLRequest, jsonBody: String) {
-        request.HTTPMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
     }
 }

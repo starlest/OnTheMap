@@ -11,7 +11,7 @@ import UIKit
 
 extension Client {
     
-    func authenticateWithViewController(hostViewController: UIViewController, throughFacebook: Bool, completionHandlerForAuth: (success: Bool, error: NSError?) -> Void) {
+    static func authenticateWithViewController(hostViewController: UIViewController, throughFacebook: Bool, completionHandlerForAuth: (success: Bool, error: NSError?) -> Void) {
         
         let controller = hostViewController as! LoginViewController
         let username = controller.emailTextField.text!
@@ -53,10 +53,15 @@ extension Client {
     private func getSessionID(username: String, password: String, completionHandlerForSession: (success: Bool, sessionID: String?, error: NSError?) -> Void) {
 
         let parameters = [String:AnyObject]()
-
+        
+        let htmlHeaderFields = [
+            HTMLHeaderFields.Accept : HTMLHeaderValues.ApplicationJSON,
+            HTMLHeaderFields.ContentType : HTMLHeaderValues.ApplicationJSON
+         ]
+        
         let jsonBody = "{\"\(UdacityJSONBodyKeys.Udacity)\": {\"\(UdacityJSONBodyKeys.Username)\": \"\(username)\", \"\(UdacityJSONBodyKeys.Password)\": \"\(password)\"}}"
         
-        taskForPostMethod(UdacityMethods.Session, parameters: parameters, jsonBody: jsonBody) { (results, error) in
+        taskForPostMethod(UdacityMethods.Session, parameters: parameters, htmlHeaderFields: htmlHeaderFields, jsonBody: jsonBody) { (results, error) in
             
             if let error = error {
                 completionHandlerForSession(success: false, sessionID: nil, error: error)
@@ -76,8 +81,13 @@ extension Client {
         let parameters = [String:AnyObject]()
         
         let jsonBody = "{\"\(UdacityJSONBodyKeys.FacebookMobile)\": {\"\(UdacityJSONBodyKeys.FacebookAcessToken)\": \"\(FBSDKAccessToken.currentAccessToken().tokenString);\"}}"
-
-        taskForPostMethod(UdacityMethods.Session, parameters: parameters, jsonBody: jsonBody) { (results, error) in
+        
+        let htmlHeaderFields = [
+            HTMLHeaderFields.Accept : HTMLHeaderValues.ApplicationJSON,
+            HTMLHeaderFields.ContentType : HTMLHeaderValues.ApplicationJSON
+        ]
+        
+        taskForPostMethod(UdacityMethods.Session, parameters: parameters, htmlHeaderFields: htmlHeaderFields, jsonBody: jsonBody) { (results, error) in
             
             if let error = error {
                 completionHandlerForSession(success: false, sessionID: nil, error: error)

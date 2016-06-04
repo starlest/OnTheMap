@@ -18,11 +18,13 @@ class MapTabViewController: UIViewController {
     }
     
     @IBAction func logoutButtonPressed(sender: AnyObject) {
-        Client.sharedInstance().showLogoutConfirmationAlert(hostController: self) { (flag) in
+        Client.showLogoutConfirmationAlert(hostController: self) { (flag) in
             if flag {
                 Client.sharedInstance().attemptToEndSession({ (success, error) in
                     if success {
                         self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        Client.showAlert(hostController: self, title: "Logout Failed", message: "There was an error while logging out.")
                     }
                 })
             }

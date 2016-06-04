@@ -45,11 +45,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBAction func udacityLoginButtonPressed(sender: AnyObject) {
         if !areLoginFieldsFilled() {
-            Client.sharedInstance().showAlert(hostController: self, title: "Missing Field(s)", message: "Please enter both your username and password.")
+            Client.showAlert(hostController: self, title: "Missing Field(s)", message: "Please enter both your username and password.")
             return
         }
         if !Reachability.isConnectedToNetwork() {
-            Client.sharedInstance().showAlert(hostController: self, title: "No Connection", message: "The Internet appears to be offline")
+            Client.showAlert(hostController: self, title: "No Connection", message: "The Internet appears to be offline")
             return
         }
         startAuthentication(throughFacebook: false)
@@ -57,20 +57,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     private func startAuthentication(throughFacebook throughFacebook: Bool) {
         setUIEnabled(false)
-        Client.sharedInstance().authenticateWithViewController(self, throughFacebook: throughFacebook) { (success, error) in
+        Client.authenticateWithViewController(self, throughFacebook: throughFacebook) { (success, error) in
             performUIUpdatesOnMain({
                 if success {
                     self.completeLogin()
                 } else {
                     if error?.code == Client.ErrorCodes.InvalidLoginCredentials {
                         let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account." : "Wrong username or password."
-                        Client.sharedInstance().showAlert(hostController: self, title: "Login Failed", message: message)
+                        Client.showAlert(hostController: self, title: "Login Failed", message: message)
                     } else if error?.code == Client.ErrorCodes.FailedConnectionToServer {
-                        Client.sharedInstance().showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server.")
+                        Client.showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server.")
                     } else {
-                        print(error?.code)
-                        Client.sharedInstance()
-                            .showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later.")
+                        Client.showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later.")
                     }
                 }
                 self.setUIEnabled(true)

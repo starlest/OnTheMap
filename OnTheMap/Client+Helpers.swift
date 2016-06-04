@@ -26,6 +26,14 @@ extension Client {
         return components.URL!
     }
     
+    func setRequestHTTPPOSTSettings(request: NSMutableURLRequest, htmlHeaderFields: [String:String], jsonBody: String) {
+        request.HTTPMethod = "POST"
+        for (forHTTPHeaderField, value) in htmlHeaderFields {
+            request.addValue(value, forHTTPHeaderField: forHTTPHeaderField)
+        }
+        request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
+    }
+    
     func convertDataWithCompletionHandler(data: NSData, completionHandlerForConvertData: (result: AnyObject!, error: NSError?) -> Void) {
         
         var parsedResult: AnyObject!
@@ -50,7 +58,7 @@ extension Client {
         }
     }
     
-    func showAlert(hostController hostController: UIViewController, title: String, message: String) {
+    static func showAlert(hostController hostController: UIViewController, title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let alertAction = UIAlertAction(title: "Dimiss", style: .Default, handler: { (UIAlertAction) in
             alert.dismissViewControllerAnimated(true, completion: nil)
@@ -59,19 +67,17 @@ extension Client {
         hostController.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func showLogoutConfirmationAlert(hostController hostController: UIViewController, confirmationHandler: (flag: Bool) -> Void) {
-        let alert = UIAlertController(title: "Confirmation", message: "Confirm?", preferredStyle: .ActionSheet)
+    static func showLogoutConfirmationAlert(hostController hostController: UIViewController, confirmationHandler: (flag: Bool) -> Void) {
+        let alert = UIAlertController(title: "Confirmation", message: "Confirm logging out?", preferredStyle: .ActionSheet)
         
         let yesAlertAction = UIAlertAction(title: "Yes", style: .Default, handler: { (UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: {
-                confirmationHandler(flag: true)
-            })
+            alert.dismissViewControllerAnimated(true, completion: nil)
+            confirmationHandler(flag: true)
         })
         
         let noAlertAction = UIAlertAction(title: "No", style: .Default, handler: { (UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: {
-                confirmationHandler(flag: false)
-            })
+            alert.dismissViewControllerAnimated(true, completion: nil)
+            confirmationHandler(flag: false)
         })
         
         alert.addAction(yesAlertAction)

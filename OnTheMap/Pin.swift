@@ -9,8 +9,12 @@
 import Foundation
 
 struct Pin {
-    var name: String
-    var url: String
+    var objectId: String
+    var uniqueKey: String
+    var firstName: String
+    var lastName: String
+    var mapString: String
+    var mediaURL: String
     var latitude: Float
     var longtitude: Float
 }
