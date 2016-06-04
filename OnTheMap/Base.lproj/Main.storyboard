@@ -194,7 +194,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="De4-4p-g96" firstAttribute="top" secondItem="Cuu-pU-4A7" secondAttribute="topMargin" id="KF0-Fe-e0V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1qJ-WQ-4k2" secondAttribute="trailing" constant="-20" id="SZ6-jy-6b7"/>
@@ -208,6 +208,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="F6X-NH-k7R"/>
                     <connections>
                         <outlet property="mapView" destination="De4-4p-g96" id="cou-Bc-jxQ"/>
+                        <outlet property="refreshButton" destination="CPS-lk-52m" id="Hdp-xp-oEJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8v-9q-URw" userLabel="First Responder" sceneMemberID="firstResponder"/>

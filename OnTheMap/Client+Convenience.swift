@@ -85,8 +85,8 @@ extension Client {
             let lastName = studentLocation[ParseJSONResponseKeys.LastName] as! String
             let mapString = studentLocation[ParseJSONResponseKeys.MapString] as! String
             let mediaURL = studentLocation[ParseJSONResponseKeys.MediaURL] as! String
-            let latitude = studentLocation[ParseJSONResponseKeys.Latitude] as! Float
-            let longtitude = studentLocation[ParseJSONResponseKeys.Longitude] as! Float
+            let latitude = studentLocation[ParseJSONResponseKeys.Latitude] as! Double
+            let longtitude = studentLocation[ParseJSONResponseKeys.Longitude] as! Double
             
             let studentLocation = StudentLocation(objectId: objectId, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longtitude)
             

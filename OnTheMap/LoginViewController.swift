@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         setUpFacebookLoginButton()
     }
     
-    // MARK: FBSDKLoginButtonDelegate Protocols
+    // MARK: Protocols
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         /* Make sure to proceed only if an access token is successfully retrieved */
@@ -52,32 +52,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         startAuthentication(throughFacebook: false)
-    }
-    
-    private func startAuthentication(throughFacebook throughFacebook: Bool) {
-        setUIEnabled(false)
-        Client.sharedInstance().authenticateWithViewController(self, throughFacebook: throughFacebook) { (success, error) in
-            performUIUpdatesOnMain({
-                if success {
-                    self.completeLogin()
-                } else {
-                    if error?.code == Client.ErrorCodes.InvalidLoginCredentials {
-                        let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account. \n Error Code: \(error!.code)" : "Wrong username or password. \n Error Code: \(error!.code)"
-                        Client.showAlert(hostController: self, title: "Login Failed", message: message)
-                    } else if error?.code == Client.ErrorCodes.FailedConnectionToServer {
-                        Client.showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server. \n Error Code: \(error!.code)")
-                    } else {
-                        Client.showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later. \n Error Code: \(error!.code)")
-                    }
-                }
-                self.setUIEnabled(true)
-            })
-        }
-    }
-    
-    private func completeLogin() {
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
-        presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
