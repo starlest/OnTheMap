@@ -17,7 +17,6 @@ extension LoginViewController {
     }
     
     func setUpFacebookLoginButton() {
-        Client.sharedInstance().attemptToLogoutFacebook()
         facebookLoginButton.delegate = self
         facebookLoginButton.readPermissions = ["email"]
     }

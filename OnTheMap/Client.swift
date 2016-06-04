@@ -28,27 +28,55 @@ class Client : NSObject {
     }
 
     // MARK: GET
-    func taskForGetMethod(method: String, parameters: [String:AnyObject], completionHandlerForGet: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
-        
-        let request = NSMutableURLRequest(URL: createUdacityURLFromParameters(parameters, withPathExtension: method))
+    func taskForGetMethod(request request: NSMutableURLRequest, completionHandlerForGet: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
-            //
+            
+            func sendError(errorString: String, errorCode: Int = 1) {
+                let userInfo = [NSLocalizedDescriptionKey : errorString]
+                completionHandlerForGet(results: nil, error: NSError(domain: "taskForGetMethod", code: errorCode, userInfo: userInfo))
+            }
+            
+            /* GUARD: Was there an error? */
+            guard (error == nil) else {
+                sendError("There was an error with your request: \(error)")
+                return
+            }
+            
+            /* GUARD: Did we get a successful 2xx response? */
+            guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                var errorCode = ((response as? NSHTTPURLResponse)?.statusCode)!
+                
+                /* Group 5xx response as server side error under error code 5 */
+                if (errorCode >= 500 && errorCode <= 599) {
+                    errorCode = errorCode / 100
+                }
+                
+                sendError("Your request returned a status code other than 2xx! \(errorCode)", errorCode: errorCode)
+                return
+            }
+            
+            /* GUARD: Was there any data returned? */
+            guard let data = data else {
+                sendError("No data was returned by the request!")
+                return
+            }
+ 
+            /* Parse the data and use the data (in the completionHandlerForPost) */
+            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGet)
         }
-    
+
         return task
     }
     
     // MARK: POST
-    func taskForPostMethod(method: String, parameters: [String:AnyObject], htmlHeaderFields: [String:String], jsonBody: String, completionHandlerForPOST: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    func taskForPostMethod(request request: NSMutableURLRequest, completionHandlerForPOST: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
-        let request = NSMutableURLRequest(URL: createUdacityURLFromParameters(parameters, withPathExtension: method))
-        setRequestHTTPPOSTSettings(request, htmlHeaderFields: htmlHeaderFields, jsonBody: jsonBody)
-       
         /* Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             func sendError(errorString: String, errorCode: Int = 1) {
+                print(errorString)
                 let userInfo = [NSLocalizedDescriptionKey : errorString]
                 completionHandlerForPOST(results: nil, error: NSError(domain: "taskForPostMethod", code: errorCode, userInfo: userInfo))
             }
@@ -83,8 +111,6 @@ class Client : NSObject {
             /* Parse the data and use the data (in the completionHandlerForPost) */
             self.convertDataWithCompletionHandler(subData, completionHandlerForConvertData: completionHandlerForPOST)
         }
-        
-        task.resume()
         
         return task
     }

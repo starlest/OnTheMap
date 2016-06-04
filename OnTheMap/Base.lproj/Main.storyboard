@@ -153,7 +153,6 @@
         <!--Map-->
         <scene sceneID="8Ie-Xg-txR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n8v-9q-URw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0Ik-n9-Dyw" customClass="MapTabViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CNo-r7-3Lf"/>
@@ -211,6 +210,7 @@
                         <outlet property="mapView" destination="De4-4p-g96" id="cou-Bc-jxQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8v-9q-URw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1649" y="260"/>
         </scene>

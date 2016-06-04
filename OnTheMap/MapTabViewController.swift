@@ -15,6 +15,7 @@ class MapTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     @IBAction func logoutButtonPressed(sender: AnyObject) {
@@ -35,5 +36,7 @@ class MapTabViewController: UIViewController {
     }
     
     @IBAction func refreshButtonPressed(sender: AnyObject) {
+        Client.sharedInstance().getStudentLocations { (success, error) in
+        }
     }
 }

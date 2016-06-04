@@ -27,7 +27,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         setUpActivityView()
         setUpFacebookLoginButton()
     }
-
     
     // MARK: FBSDKLoginButtonDelegate Protocols
     
@@ -57,7 +56,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     private func startAuthentication(throughFacebook throughFacebook: Bool) {
         setUIEnabled(false)
-        Client.authenticateWithViewController(self, throughFacebook: throughFacebook) { (success, error) in
+        Client.sharedInstance().authenticateWithViewController(self, throughFacebook: throughFacebook) { (success, error) in
             performUIUpdatesOnMain({
                 if success {
                     self.completeLogin()
