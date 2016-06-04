@@ -37,9 +37,15 @@ extension Client {
     
     // MARK: Udacity Response Keys
     struct ParseJSONResponseKeys {
-        
-        // MARK: Authorization
         static let Results = "results"
+        static let ObjectId = "objectId"
+        static let UniqueKey = "uniqueKey"
+        static let FirstName = "firstName"
+        static let LastName = "lastName"
+        static let Latitude = "latitude"
+        static let Longitude = "longitude"
+        static let MapString = "mapString"
+        static let MediaURL = "mediaURL"
     }
     
     // MARK: Udacity Constants
@@ -69,7 +75,6 @@ extension Client {
     
     // MARK: Udacity Response Keys
     struct UdacityJSONResponseKeys {
-        
         // MARK: Authorization
         static let Session = "session"
         static let SessionID = "id"

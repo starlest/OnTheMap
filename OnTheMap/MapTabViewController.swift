@@ -13,6 +13,11 @@ class MapTabViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var studentLocations: [StudentLocation] {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.studentLocations
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +30,7 @@ class MapTabViewController: UIViewController {
                     if success {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
-                        Client.showAlert(hostController: self, title: "Logout Failed", message: "There was an error while logging out.")
+                        Client.showAlert(hostController: self, title: "Logout Failed", message: "There was an error while logging out. \n Error Code: \(error!.code)")
                     }
                 })
             }
@@ -37,6 +42,11 @@ class MapTabViewController: UIViewController {
     
     @IBAction func refreshButtonPressed(sender: AnyObject) {
         Client.sharedInstance().getStudentLocations { (success, error) in
+            if (success) {
+                print(self.studentLocations)
+            } else {
+                Client.showAlert(hostController: self, title: "Load Failed", message: "Failed to load student locations. \n Error Code: \(error!.code)")
+            }
         }
     }
 }

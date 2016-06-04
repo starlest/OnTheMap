@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         if !Reachability.isConnectedToNetwork() {
-            Client.showAlert(hostController: self, title: "No Connection", message: "The Internet appears to be offline")
+            Client.showAlert(hostController: self, title: "No Connection", message: "The Internet appears to be offline.")
             return
         }
         startAuthentication(throughFacebook: false)
@@ -62,12 +62,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     self.completeLogin()
                 } else {
                     if error?.code == Client.ErrorCodes.InvalidLoginCredentials {
-                        let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account." : "Wrong username or password."
+                        let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account. \n Error Code: \(error!.code)" : "Wrong username or password. \n Error Code: \(error!.code)"
                         Client.showAlert(hostController: self, title: "Login Failed", message: message)
                     } else if error?.code == Client.ErrorCodes.FailedConnectionToServer {
-                        Client.showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server.")
+                        Client.showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server. \n Error Code: \(error!.code)")
                     } else {
-                        Client.showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later.")
+                        Client.showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later. \n Error Code: \(error!.code)")
                     }
                 }
                 self.setUIEnabled(true)

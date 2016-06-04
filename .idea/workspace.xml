@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9efd15ca-816b-4d59-8d9f-e540dca48292" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OnTheMap/MapTabViewController.swift" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OnTheMap/LoginViewController+UIConfigurations.swift" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/OnTheMap/Pin.swift" afterPath="$PROJECT_DIR$/OnTheMap/StudentLocation.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OnTheMap.iml" afterPath="$PROJECT_DIR$/.idea/OnTheMap.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/AppDelegate.swift" afterPath="$PROJECT_DIR$/OnTheMap/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/OnTheMap/Base.lproj/Main.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" afterPath="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Client+Convenience.swift" afterPath="$PROJECT_DIR$/OnTheMap/Client+Convenience.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Client.swift" afterPath="$PROJECT_DIR$/OnTheMap/Client.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Info.plist" afterPath="$PROJECT_DIR$/OnTheMap/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/LoginViewController+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/LoginViewController+Helpers.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/OnTheMap-Bridging-Header.h" afterPath="$PROJECT_DIR$/OnTheMap/OnTheMap-Bridging-Header.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/MapTabViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/MapTabViewController.swift" />
     </list>
     <ignored path="OnTheMap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,63 +32,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginViewController.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/LoginViewController.swift">
+      <file leaf-file-name="Client+Convenience.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Convenience.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+            <state relative-caret-position="877">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
-                <marker date="1464968939000" expanded="true" signature="2918:2924" ph="{...}" />
-                <marker date="1464968939000" expanded="true" signature="2918:3098" ph="{...}" />
-                <marker date="1464968939000" expanded="true" signature="3090:3096" ph="{...}" />
+                <element signature="e#4225#5399#0" expanded="false" />
+                <element signature="e#5405#6449#0" expanded="false" />
+                <element signature="e#6504#7657#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/Client.swift">
+      <file leaf-file-name="StudentLocation.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OnTheMap/StudentLocation.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1176">
-              <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+            <state relative-caret-position="252">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client+Convenience.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Convenience.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="23" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client+Helpers.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Helpers.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client+Constants.swift" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Client+Constants.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Constants.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            <state relative-caret-position="420">
+              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
               <folding>
-                <marker date="1464965617000" expanded="true" signature="158:1534" ph="{...}" />
-                <marker date="1464965617000" expanded="true" signature="226:279" ph="{...}" />
-                <marker date="1464965617000" expanded="true" signature="344:574" ph="{...}" />
-                <marker date="1464965617000" expanded="true" signature="631:678" ph="{...}" />
-                <marker date="1464965617000" expanded="true" signature="748:754" ph="{...}" />
-                <marker date="1464965617000" expanded="true" signature="1367:1374" ph="{...}" />
-                <marker date="1464965617000" expanded="true" signature="1428:1532" ph="{...}" />
+                <marker date="1465058753000" expanded="true" signature="2802:2905" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -111,8 +80,9 @@
         <option value="$PROJECT_DIR$/OnTheMap/Client.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/Client+Helpers.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" />
-        <option value="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/Client+Convenience.swift" />
+        <option value="$PROJECT_DIR$/OnTheMap/StudentLocation.swift" />
+        <option value="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" />
       </list>
     </option>
   </component>
@@ -153,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -228,6 +199,24 @@
               <option name="myItemId" value="Models" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
@@ -235,7 +224,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,13 +290,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="140" y="43" width="1400" height="932" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -320,7 +309,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -329,18 +317,75 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/OnTheMap/LoginViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="994">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+          <folding>
+            <marker date="1465058603000" expanded="true" signature="228:3539" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="654:752" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="3358:3365" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="3359:3365" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/Client.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1204">
+          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Convenience.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4225#5399#0" expanded="false" />
+            <element signature="e#5405#6449#0" expanded="false" />
+            <element signature="e#6504#7657#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Helpers.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1465052967000" expanded="true" signature="297:810" ph="{...}" />
+            <marker date="1465052967000" expanded="true" signature="4329:4341" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Constants.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding>
+            <marker date="1465058753000" expanded="true" signature="2802:2905" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/LoginViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="770">
           <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
           <folding>
-            <marker date="1464968939000" expanded="true" signature="2918:2924" ph="{...}" />
-            <marker date="1464968939000" expanded="true" signature="2918:3098" ph="{...}" />
-            <marker date="1464968939000" expanded="true" signature="3090:3096" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="228:3539" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="654:752" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="3358:3365" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="3359:3365" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -357,7 +402,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#4225#5399#0" expanded="false" />
+            <element signature="e#5405#6449#0" expanded="false" />
+            <element signature="e#6504#7657#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -365,7 +414,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1465052967000" expanded="true" signature="297:810" ph="{...}" />
+            <marker date="1465052967000" expanded="true" signature="4329:4341" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -374,73 +426,71 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464965617000" expanded="true" signature="158:1534" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="226:279" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="344:574" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="631:678" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="748:754" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="1367:1374" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="1428:1532" ph="{...}" />
+            <marker date="1465058753000" expanded="true" signature="2802:2905" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OnTheMap/LoginViewController+UIConfigurations.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/LoginViewController+UIConfigurations.swift" />
     <entry file="file://$PROJECT_DIR$/OnTheMap/Client.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="86" column="10" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+        <state relative-caret-position="1414">
+          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Helpers.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Constants.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        <state relative-caret-position="1302">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding>
-            <marker date="1464965617000" expanded="true" signature="158:1534" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="226:279" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="344:574" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="631:678" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="748:754" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="1367:1374" ph="{...}" />
-            <marker date="1464965617000" expanded="true" signature="1428:1532" ph="{...}" />
+            <marker date="1465052967000" expanded="true" signature="297:810" ph="{...}" />
+            <marker date="1465052967000" expanded="true" signature="4329:4341" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnTheMap/LoginViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state relative-caret-position="980">
+          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
           <folding>
-            <marker date="1464968939000" expanded="true" signature="2918:2924" ph="{...}" />
-            <marker date="1464968939000" expanded="true" signature="2918:3098" ph="{...}" />
-            <marker date="1464968939000" expanded="true" signature="3090:3096" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="228:3539" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="654:752" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="3358:3365" ph="{...}" />
+            <marker date="1465058603000" expanded="true" signature="3359:3365" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Convenience.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="23" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="877">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding>
+            <element signature="e#4225#5399#0" expanded="false" />
+            <element signature="e#5405#6449#0" expanded="false" />
+            <element signature="e#6504#7657#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/StudentLocation.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Constants.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <marker date="1465058753000" expanded="true" signature="2802:2905" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -61,8 +61,8 @@ extension Client {
                 return
             }
             
-            if let results = results[ParseJSONResponseKeys.Results] as? [[String:AnyObject]] {
-                // do something with results
+            if let studentLocations = results[ParseJSONResponseKeys.Results] as? [[String:AnyObject]] {
+                self.storeStudentLocations(studentLocations)
                 completionHandlerForSession(success: true, error: nil)
             } else {
                 completionHandlerForSession(success: false, error: NSError(domain: "getStudentLocations parsing", code: ErrorCodes.FailedToParseData, userInfo: [NSLocalizedDescriptionKey: "Could not parse studentLocations"]))
@@ -70,6 +70,28 @@ extension Client {
         }
         
         task.resume()
+    }
+
+    func storeStudentLocations(studentLocations: [[String:AnyObject]]) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.studentLocations.removeAll()
+        
+        for studentLocation in studentLocations {
+            
+            let objectId = studentLocation[ParseJSONResponseKeys.ObjectId] as! String
+            let uniqueKey = studentLocation[ParseJSONResponseKeys.UniqueKey] as! String
+            let firstName = studentLocation[ParseJSONResponseKeys.FirstName] as! String
+            let lastName = studentLocation[ParseJSONResponseKeys.LastName] as! String
+            let mapString = studentLocation[ParseJSONResponseKeys.MapString] as! String
+            let mediaURL = studentLocation[ParseJSONResponseKeys.MediaURL] as! String
+            let latitude = studentLocation[ParseJSONResponseKeys.Latitude] as! Float
+            let longtitude = studentLocation[ParseJSONResponseKeys.Longitude] as! Float
+            
+            let studentLocation = StudentLocation(objectId: objectId, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longtitude)
+            
+            appDelegate.studentLocations.append(studentLocation)
+        }
     }
     
     // MARK: POST Convenience Methods

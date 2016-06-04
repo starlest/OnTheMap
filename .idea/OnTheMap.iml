@@ -14,6 +14,7 @@
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Client+Convenience.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/OnTheMap-Bridging-Header.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OnTheMap/StudentLocation.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/MapTabViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OnTheMap/Base.lproj/Main.storyboard" isTestSource="false" />

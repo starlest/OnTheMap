@@ -1,5 +1,5 @@
 //
-//  Pin.swift
+//  StudentLocation.swift
 //  OnTheMap
 //
 //  Created by Edwin Chia on 4/6/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Pin {
+struct StudentLocation {
     var objectId: String
     var uniqueKey: String
     var firstName: String
@@ -16,5 +16,5 @@ struct Pin {
     var mapString: String
     var mediaURL: String
     var latitude: Float
-    var longtitude: Float
+    var longitude: Float
 }
