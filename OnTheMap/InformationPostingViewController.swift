@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class InformationPostingViewController: UIViewController, UITextFieldDelegate {
 
@@ -22,11 +23,33 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpActivityView()
+        textField.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        suscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsuscribeToKeyboardNotifications()
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
         activityView.center = view.center
+    }
+    
+    /* MARK: Textfield Protocols */
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.text = ""
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     /* MARK: Actions */
@@ -36,6 +59,17 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate {
     }
  
     @IBAction func findOnTheMapButtonPressed(sender: AnyObject) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(textField.text!) { (placemarks, error) in
+            
+            /* GUARD: Was there an error? */
+            guard (error == nil) else {
+                print("There was an error with your request: \(error)")
+                return
+            }
+            
+            print(placemarks![0])
+        }
     }
     
     func setUpActivityView() {

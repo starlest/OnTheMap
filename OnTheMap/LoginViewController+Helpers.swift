@@ -49,6 +49,12 @@ extension LoginViewController {
                 if success {
                     self.completeLogin()
                 } else {
+                    
+                    /* Log out of Facebook too if an error occurs while authenticating with Udacity */
+                    if throughFacebook {
+                        Client.sharedInstance().attemptToLogoutFacebook()
+                    }
+                    
                     if error?.code == Client.ErrorCodes.InvalidLoginCredentials {
                         let message = throughFacebook ? "Your Facebook Account is not linked to an Udacity account. \n Error Code: \(error!.code)" : "Wrong username or password. \n Error Code: \(error!.code)"
                         Client.showAlert(hostController: self, title: "Login Failed", message: message)
