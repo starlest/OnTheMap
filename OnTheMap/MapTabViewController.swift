@@ -38,6 +38,10 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
         downloadUserLocations()
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        activityView.center = view.center
+    }
+    
     // MARK: Protocols
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -75,6 +79,8 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func pinButtonPressed(sender: AnyObject) {
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("InformationPostingViewController") as! InformationPostingViewController
+        presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func refreshButtonPressed(sender: AnyObject) {

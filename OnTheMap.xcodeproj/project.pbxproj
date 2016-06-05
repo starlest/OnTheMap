@@ -11,6 +11,7 @@
 		6D0031DB1D035EFD000FC658 /* MapTabViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0031DA1D035EFD000FC658 /* MapTabViewController+Helpers.swift */; };
 		6D0031DE1D036771000FC658 /* TableTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0031DD1D036771000FC658 /* TableTabViewController.swift */; };
 		6D0031E01D036819000FC658 /* TableTabViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0031DF1D036819000FC658 /* TableTabViewController+Helpers.swift */; };
+		6D0031E21D047B18000FC658 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0031E11D047B18000FC658 /* InformationPostingViewController.swift */; };
 		6D7F8DC11CFF740000D5C5BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DC01CFF740000D5C5BC /* AppDelegate.swift */; };
 		6D7F8DC31CFF740000D5C5BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F8DC21CFF740000D5C5BC /* LoginViewController.swift */; };
 		6D7F8DC61CFF740000D5C5BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F8DC41CFF740000D5C5BC /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		6D0031DA1D035EFD000FC658 /* MapTabViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapTabViewController+Helpers.swift"; sourceTree = "<group>"; };
 		6D0031DD1D036771000FC658 /* TableTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTabViewController.swift; sourceTree = "<group>"; };
 		6D0031DF1D036819000FC658 /* TableTabViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableTabViewController+Helpers.swift"; sourceTree = "<group>"; };
+		6D0031E11D047B18000FC658 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
 		6D7F8DBD1CFF740000D5C5BC /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7F8DC01CFF740000D5C5BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D7F8DC21CFF740000D5C5BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				6D7F8DF11D004B6600D5C5BC /* Login */,
 				6D0031D91D02134B000FC658 /* MapTab */,
 				6D0031DC1D0366F6000FC658 /* TableTab */,
+				6D0031E11D047B18000FC658 /* InformationPostingViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				6D7F8DC31CFF740000D5C5BC /* LoginViewController.swift in Sources */,
 				6D7F8DFC1D0054BC00D5C5BC /* Client+Convenience.swift in Sources */,
 				6D0031E01D036819000FC658 /* TableTabViewController+Helpers.swift in Sources */,
+				6D0031E21D047B18000FC658 /* InformationPostingViewController.swift in Sources */,
 				6D7F8E001D008CDB00D5C5BC /* Reachability.swift in Sources */,
 				6D0031DE1D036771000FC658 /* TableTabViewController.swift in Sources */,
 				6D7F8E0C1D01DC8600D5C5BC /* MapTabViewController.swift in Sources */,

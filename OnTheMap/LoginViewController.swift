@@ -28,6 +28,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         setUpFacebookLoginButton()
     }
     
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        activityView.center = view.center
+    }
+    
     // MARK: Protocols
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {

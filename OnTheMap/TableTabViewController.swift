@@ -39,6 +39,10 @@ class TableTabViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidAppear(animated)
         downloadUserLocations()
     }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        activityView.center = view.center
+    }
 
     // MARK: Protocols
 
@@ -63,7 +67,7 @@ class TableTabViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: Actions
     
     @IBAction func pinButtonPressed(sender: AnyObject) {
-        print(studentLocations.count)
+        
     }
 
     @IBAction func refreshButtonPressed(sender: AnyObject) {
