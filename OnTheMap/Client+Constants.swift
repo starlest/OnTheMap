@@ -70,7 +70,7 @@ extension Client {
         static let Username = "username"
         static let Password = "password"
         static let FacebookMobile = "facebook_mobile"
-        static let FacebookAcessToken = "acesss_token"
+        static let FacebookAcessToken = "access_token"
     }
     
     // MARK: Udacity Response Keys

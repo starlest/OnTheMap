@@ -17,23 +17,13 @@ extension Client {
         let username = controller.emailTextField.text!
         let password = controller.passwordTextField.text!
         
-        if !throughFacebook {
-            getSessionID(throughFacebook: false, username: username, password: password) { (success, sessionID, error) in
-                if success {
-                    self.sessionID = sessionID
-                    completionHandlerForAuth(success: true, error: error)
-                } else {
-                    completionHandlerForAuth(success: false, error: error)
-                }
-            }
-        } else {
-            getSessionID(throughFacebook: true) { (success, sessionID, error) in
-                if success {
-                    self.sessionID = sessionID
-                    completionHandlerForAuth(success: true, error: error)
-                } else {
-                    completionHandlerForAuth(success: false, error: error)
-                }
+   
+        getSessionID(throughFacebook: throughFacebook, username: username, password: password) { (success, sessionID, error) in
+            if success {
+                self.sessionID = sessionID
+                completionHandlerForAuth(success: true, error: error)
+            } else {
+                completionHandlerForAuth(success: false, error: error)
             }
         }
     }
@@ -72,28 +62,6 @@ extension Client {
         task.resume()
     }
 
-    func storeStudentLocations(studentLocations: [[String:AnyObject]]) {
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.studentLocations.removeAll()
-        
-        for studentLocation in studentLocations {
-            
-            let objectId = studentLocation[ParseJSONResponseKeys.ObjectId] as! String
-            let uniqueKey = studentLocation[ParseJSONResponseKeys.UniqueKey] as! String
-            let firstName = studentLocation[ParseJSONResponseKeys.FirstName] as! String
-            let lastName = studentLocation[ParseJSONResponseKeys.LastName] as! String
-            let mapString = studentLocation[ParseJSONResponseKeys.MapString] as! String
-            let mediaURL = studentLocation[ParseJSONResponseKeys.MediaURL] as! String
-            let latitude = studentLocation[ParseJSONResponseKeys.Latitude] as! Double
-            let longtitude = studentLocation[ParseJSONResponseKeys.Longitude] as! Double
-            
-            let studentLocation = StudentLocation(objectId: objectId, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longtitude)
-            
-            appDelegate.studentLocations.append(studentLocation)
-        }
-    }
-    
     // MARK: POST Convenience Methods
     
     private func getSessionID(throughFacebook throughFacebook: Bool, username: String? = nil, password: String? = nil, completionHandlerForSession: (success: Bool, sessionID: String?, error: NSError?) -> Void) {
@@ -118,6 +86,7 @@ extension Client {
     }
 
     private func createGetSessionIdRequest(throughFacebook throughFacebook: Bool, username: String? = nil, password: String? = nil) -> NSMutableURLRequest {
+        
         let parameters = [String:AnyObject]()
         
         let htmlHeaderFields = [
@@ -125,7 +94,7 @@ extension Client {
             HTMLHeaderFields.ContentType : HTMLHeaderValues.ApplicationJSON
         ]
         
-        let jsonBody = throughFacebook ? "{\"\(UdacityJSONBodyKeys.FacebookMobile)\": {\"\(UdacityJSONBodyKeys.FacebookAcessToken)\": \"\(FBSDKAccessToken.currentAccessToken().tokenString);\"}}" : "{\"\(UdacityJSONBodyKeys.Udacity)\": {\"\(UdacityJSONBodyKeys.Username)\": \"\(username!)\", \"\(UdacityJSONBodyKeys.Password)\": \"\(password!)\"}}"
+        let jsonBody = throughFacebook ? "{\"\(UdacityJSONBodyKeys.FacebookMobile)\": {\"\(UdacityJSONBodyKeys.FacebookAcessToken)\": \"\(FBSDKAccessToken.currentAccessToken().tokenString)\"}}" : "{\"\(UdacityJSONBodyKeys.Udacity)\": {\"\(UdacityJSONBodyKeys.Username)\": \"\(username!)\", \"\(UdacityJSONBodyKeys.Password)\": \"\(password!)\"}}"
         
         let request = NSMutableURLRequest(URL: createUdacityURLFromParameters(parameters, withPathExtension: UdacityMethods.Session))
         setRequestHTTPSettings(request, method: "POST", htmlHeaderFields: htmlHeaderFields, withJsonBody: jsonBody)

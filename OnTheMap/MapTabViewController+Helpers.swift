@@ -37,6 +37,26 @@ extension MapTabViewController {
         }
     }
     
+    func logout() {
+        enableUI(false)
+        
+        Client.attemptToLogOut(hostController: self) { (success, error) in
+            
+            if success {
+                performUIUpdatesOnMain({
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
+            } else {
+                performUIUpdatesOnMain({
+                    if let error = error {
+                        Client.showAlert(hostController: self, title: "Logout Failed", message: "There was an error while logging out. \n Error Code: \(error.code)")
+                    }
+                    self.enableUI(true)
+                })
+            }
+        }
+    }
+    
     func enableUI(enabled: Bool) {
         logoutButton.enabled = enabled
         pinButton.enabled = enabled

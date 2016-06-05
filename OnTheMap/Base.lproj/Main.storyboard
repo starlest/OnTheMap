@@ -257,10 +257,29 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EGp-4Z-8iz">
+                                <rect key="frame" x="0.0" y="60" width="600" height="491"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="XeJ-Ti-WBx">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XeJ-Ti-WBx" id="gFl-Ai-90W">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="EGp-4Z-8iz" secondAttribute="trailing" constant="-20" id="ZTB-is-2bR"/>
+                            <constraint firstItem="pzr-iS-4qP" firstAttribute="top" secondItem="EGp-4Z-8iz" secondAttribute="bottom" id="eVB-Q8-nZJ"/>
+                            <constraint firstItem="EGp-4Z-8iz" firstAttribute="top" secondItem="PTx-p5-jdB" secondAttribute="bottom" id="gLt-Jr-HOp"/>
                             <constraint firstItem="PTx-p5-jdB" firstAttribute="leading" secondItem="jas-XN-qVi" secondAttribute="leadingMargin" constant="-20" id="hHG-y4-Me8"/>
+                            <constraint firstItem="EGp-4Z-8iz" firstAttribute="leading" secondItem="jas-XN-qVi" secondAttribute="leadingMargin" constant="-20" id="jeP-NS-fel"/>
                             <constraint firstItem="PTx-p5-jdB" firstAttribute="top" secondItem="jas-XN-qVi" secondAttribute="topMargin" id="wIp-N3-iVu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PTx-p5-jdB" secondAttribute="trailing" constant="-20" id="xV3-b4-qae"/>
                         </constraints>
@@ -270,6 +289,7 @@
                         <outlet property="logoutButton" destination="48G-n9-jbk" id="oxH-AR-Zmc"/>
                         <outlet property="pinButton" destination="Atk-6H-0kE" id="lVE-Ey-5WC"/>
                         <outlet property="refreshButton" destination="JTU-yB-bwH" id="GLA-I5-OKW"/>
+                        <outlet property="tableView" destination="EGp-4Z-8iz" id="X4O-LA-XJr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqG-v0-Wdv" userLabel="First Responder" sceneMemberID="firstResponder"/>

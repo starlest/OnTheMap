@@ -111,4 +111,26 @@ extension Client {
         alert.addAction(noAlertAction)
         hostController.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func storeStudentLocations(studentLocations: [[String:AnyObject]]) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.studentLocations.removeAll()
+        
+        for studentLocation in studentLocations {
+            
+            let objectId = studentLocation[ParseJSONResponseKeys.ObjectId] as! String
+            let uniqueKey = studentLocation[ParseJSONResponseKeys.UniqueKey] as! String
+            let firstName = studentLocation[ParseJSONResponseKeys.FirstName] as! String
+            let lastName = studentLocation[ParseJSONResponseKeys.LastName] as! String
+            let mapString = studentLocation[ParseJSONResponseKeys.MapString] as! String
+            let mediaURL = studentLocation[ParseJSONResponseKeys.MediaURL] as! String
+            let latitude = studentLocation[ParseJSONResponseKeys.Latitude] as! Double
+            let longtitude = studentLocation[ParseJSONResponseKeys.Longitude] as! Double
+            
+            let studentLocation = StudentLocation(objectId: objectId, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longtitude)
+            
+            appDelegate.studentLocations.append(studentLocation)
+        }
+    }
 }

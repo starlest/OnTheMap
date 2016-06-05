@@ -20,5 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Client.sharedInstance().attemptToLogoutFacebook()
         return true
     }
+    
+    func application(application: UIApplication,openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application,
+                                                                     openURL: url,
+                                                                     sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String,
+                                                                     annotation: options [UIApplicationOpenURLOptionsAnnotationKey])
+    }
 }
 
