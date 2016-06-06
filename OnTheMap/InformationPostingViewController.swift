@@ -83,4 +83,7 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
             findLocationOnMap()
         }
     }
+    
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+    }
 }
