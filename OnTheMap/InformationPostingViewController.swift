@@ -14,7 +14,7 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate {
     /* MARK: Properties */
     
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var cancelButtonPressed: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var findOnTheMapButton: UIButton!
     
     var activityView: UIActivityIndicatorView!
@@ -37,6 +37,7 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate {
         unsuscribeToKeyboardNotifications()
     }
     
+
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
         activityView.center = view.center
     }
@@ -59,22 +60,36 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate {
     }
  
     @IBAction func findOnTheMapButtonPressed(sender: AnyObject) {
+        if !hasUserEnteredALocation() {
+            Client.showAlert(hostController: self, title: "Invalid Location", message: "Please enter a location.")
+            return
+        } else {
+            findLocationOnMap()
+        }
+    }
+    
+    func findLocationOnMap() {
+        
+        setUIEnabled(false)
+        
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(textField.text!) { (placemarks, error) in
             
             /* GUARD: Was there an error? */
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
+                performUIUpdatesOnMain({
+                    Client.showAlert(hostController: self, title: "Geocoding Failed", message: "Could not Geocode the String.")
+                    self.setUIEnabled(true)
+                    
+                })
                 return
             }
             
-            print(placemarks![0])
+            performUIUpdatesOnMain({
+                self.setUIEnabled(true)
+                let nextController = self.storyboard?.instantiateViewControllerWithIdentifier("InformationPosting2ViewController") as! InformationPosting2ViewController
+                self.presentViewController(nextController, animated: true, completion: nil)
+            })
         }
-    }
-    
-    func setUpActivityView() {
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-        activityView.center = view.center
-        view.addSubview(activityView)
     }
 }
