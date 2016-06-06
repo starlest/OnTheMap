@@ -9,27 +9,43 @@
 import UIKit
 import MapKit
 
-class InformationPostingViewController: UIViewController, UITextFieldDelegate {
+class InformationPostingViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate {
 
     /* MARK: Properties */
+    @IBOutlet weak var topContainer: UIView!
+    @IBOutlet weak var bottomContainer: UIView!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var thirdLabel: UILabel!
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var findOnTheMapButton: UIButton!
     
+    @IBOutlet weak var urlTextField: UITextField!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var submitButton: UIButton!
+    
     var activityView: UIActivityIndicatorView!
+    
+    var cascadeDismissViewController: Bool = false
     
     /* MARK: Lifecycle */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpActivityView()
-        textField.delegate = self
+        mapView.delegate = self
+        locationTextField.delegate = self
+        urlTextField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         suscribeToKeyboardNotifications()
+        if cascadeDismissViewController {
+            dismissViewControllerAnimated(false, completion: nil)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -65,31 +81,6 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate {
             return
         } else {
             findLocationOnMap()
-        }
-    }
-    
-    func findLocationOnMap() {
-        
-        setUIEnabled(false)
-        
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(textField.text!) { (placemarks, error) in
-            
-            /* GUARD: Was there an error? */
-            guard (error == nil) else {
-                performUIUpdatesOnMain({
-                    Client.showAlert(hostController: self, title: "Geocoding Failed", message: "Could not Geocode the String.")
-                    self.setUIEnabled(true)
-                    
-                })
-                return
-            }
-            
-            performUIUpdatesOnMain({
-                self.setUIEnabled(true)
-                let nextController = self.storyboard?.instantiateViewControllerWithIdentifier("InformationPosting2ViewController") as! InformationPosting2ViewController
-                self.presentViewController(nextController, animated: true, completion: nil)
-            })
         }
     }
 }

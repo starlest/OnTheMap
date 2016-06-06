@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9efd15ca-816b-4d59-8d9f-e540dca48292" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController+KeyboardBehavior.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OnTheMap/LoginViewController+KeyboardBehavior.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OnTheMap.iml" afterPath="$PROJECT_DIR$/.idea/OnTheMap.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/OnTheMap/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/InformationPosting2ViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/InformationPosting2ViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController+Helpers.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/LoginViewController+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/LoginViewController+Helpers.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" />
     </list>
     <ignored path="OnTheMap.iws" />
     <ignored path=".idea/workspace.xml" />

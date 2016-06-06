@@ -25,9 +25,9 @@ extension InformationPostingViewController {
         var rectWithKeyboard : CGRect = view.frame
         rectWithKeyboard.size.height -= keyboardHeight
         
-        if !CGRectContainsRect(rectWithKeyboard, textField!.frame)
+        if !CGRectContainsRect(rectWithKeyboard, locationTextField!.frame)
         {
-            view.frame.origin.y = keyboardHeight * (-1) + (textField.frame.origin.y - rectWithKeyboard.origin.y - offset)
+            view.frame.origin.y = keyboardHeight * (-1) + (locationTextField.frame.origin.y - rectWithKeyboard.origin.y - offset)
         }
     }
     
