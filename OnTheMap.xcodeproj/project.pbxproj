@@ -119,20 +119,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6D0031D91D02134B000FC658 /* MapTab */ = {
+		6D0031D91D02134B000FC658 /* TabViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				6D7F8E0B1D01DC8600D5C5BC /* MapTabViewController.swift */,
-			);
-			name = MapTab;
-			sourceTree = "<group>";
-		};
-		6D0031DC1D0366F6000FC658 /* TableTab */ = {
-			isa = PBXGroup;
-			children = (
 				6D0031DD1D036771000FC658 /* TableTabViewController.swift */,
 			);
-			name = TableTab;
+			name = TabViewControllers;
 			sourceTree = "<group>";
 		};
 		6D0031E31D049DAB000FC658 /* InformationPosting */ = {
@@ -202,8 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				6D7F8DF11D004B6600D5C5BC /* Login */,
-				6D0031D91D02134B000FC658 /* MapTab */,
-				6D0031DC1D0366F6000FC658 /* TableTab */,
+				6D0031D91D02134B000FC658 /* TabViewControllers */,
 				6D0031E31D049DAB000FC658 /* InformationPosting */,
 			);
 			name = "View Controllers";

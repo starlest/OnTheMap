@@ -28,6 +28,8 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
     
     var activityView: UIActivityIndicatorView!
     
+    var placeMark: CLPlacemark?
+
     /* MARK: Lifecycle */
     
     override func viewDidLoad() {
@@ -83,5 +85,6 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
             Client.showAlert(hostController: self, title: "Invalid URL", message: "Please enter a URL.")
             return
         }
+        attemptToPostLocation()
     }
 }

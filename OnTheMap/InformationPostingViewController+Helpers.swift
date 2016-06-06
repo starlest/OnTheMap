@@ -36,9 +36,32 @@ extension InformationPostingViewController {
             performUIUpdatesOnMain({
                 self.setUIEnabled(true)
                 self.swapUI()
-                let annotation = MKPlacemark(placemark: placemarks![0])
+                self.placeMark = placemarks![0]
+                let annotation = MKPlacemark(placemark: self.placeMark!)
                 self.mapView.addAnnotation(annotation)
                 self.mapView.showAnnotations([annotation], animated: true)
+            })
+        }
+    }
+    
+    func attemptToPostLocation() {
+        let uniqueKey = Client.sharedInstance().userID!
+        let firstName = Client.sharedInstance().firstName!
+        let lastName = Client.sharedInstance().lastName!
+        let mapString = locationTextField.text!
+        let mediaURL = urlTextField.text!
+        let latitude = (placeMark?.location?.coordinate.latitude)! as Double
+        let longitude = (placeMark?.location?.coordinate.longitude)! as Double
+        
+        let studentLocation = StudentLocation(objectId: nil, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        
+        Client.sharedInstance().postLocation(studentLocation) { (success, error) in
+            performUIUpdatesOnMain({
+                if success {
+                    Client.showAlert(hostController: self, title: "Post Success", message: "Your location has been successfully posted!", dimissHostController: true)
+                } else {
+                    Client.showAlert(hostController: self, title: "Post Failure", message: "Failed to post your location.")
+                }
             })
         }
     }

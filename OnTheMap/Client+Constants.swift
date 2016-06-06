@@ -61,6 +61,7 @@ extension Client {
     // MARK: Udacity Methods
     struct UdacityMethods {
         static let Session = "/session"
+        static let Users = "/users"
     }
     
     // MARK: Udacity Body Keys
@@ -78,6 +79,13 @@ extension Client {
         // MARK: Authorization
         static let Session = "session"
         static let SessionID = "id"
+        static let Account = "account"
+        static let Key = "key"
+        
+        // MARK: Retrieving user data
+        static let User = "user"
+        static let FirstName = "first_name"
+        static let LastName = "last_name"
     }
     
     // MARK: HTML Header Fields
@@ -98,5 +106,6 @@ extension Client {
         static let FailedToParseData = 0
         static let FailedConnectionToServer = 5
         static let InvalidLoginCredentials = 403
+        static let FailedToRetrieveUserData = 2
     }
 }

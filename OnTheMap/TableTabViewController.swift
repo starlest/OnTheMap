@@ -77,7 +77,8 @@ class TableTabViewController: TabViewController, UITableViewDataSource, UITableV
     // MARK: Actions
     
     @IBAction func pinButtonPressed(sender: AnyObject) {
-        
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("InformationPostingViewController") as! InformationPostingViewController
+        presentViewController(controller, animated: true, completion: nil)
     }
 
     @IBAction func refreshButtonPressed(sender: AnyObject) {

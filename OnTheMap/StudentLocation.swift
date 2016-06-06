@@ -10,7 +10,7 @@ import MapKit
 
 class StudentLocation: NSObject, MKAnnotation {
     
-    let objectId: String
+    let objectId: String?
     let uniqueKey: String
     let firstName: String
     let lastName: String
@@ -18,7 +18,7 @@ class StudentLocation: NSObject, MKAnnotation {
     let mediaURL: String
     let coordinate: CLLocationCoordinate2D
     
-    init(objectId: String, uniqueKey: String, firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double) {
+    init(objectId: String?, uniqueKey: String, firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double) {
         self.objectId = objectId
         self.uniqueKey = uniqueKey
         self.firstName = firstName

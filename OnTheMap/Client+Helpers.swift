@@ -6,8 +6,6 @@
 //  Copyright © 2016 Edwin Chia. All rights reserved.
 //
 
-import Foundation
-
 extension Client {
     
     func createUdacityURLFromParameters(parameters: [String:AnyObject], withPathExtension: String? = nil) -> NSURL {
@@ -101,10 +99,14 @@ extension Client {
         }
     }
         
-    static func showAlert(hostController hostController: UIViewController, title: String, message: String) {
+    static func showAlert(hostController hostController: UIViewController, title: String, message: String, dimissHostController: Bool = false) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let alertAction = UIAlertAction(title: "Dimiss", style: .Default, handler: { (UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: nil)
+            if dimissHostController {
+                hostController.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                alert.dismissViewControllerAnimated(true, completion: nil)
+            }
         })
         alert.addAction(alertAction)
         hostController.presentViewController(alert, animated: true, completion: nil)

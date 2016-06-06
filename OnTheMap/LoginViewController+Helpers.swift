@@ -60,6 +60,8 @@ extension LoginViewController {
                         Client.showAlert(hostController: self, title: "Login Failed", message: message)
                     } else if error?.code == Client.ErrorCodes.FailedConnectionToServer {
                         Client.showAlert(hostController: self, title: "Connection Failed", message: "Failed to connect to server. \n Error Code: \(error!.code)")
+                    } else if error?.code == Client.ErrorCodes.FailedToRetrieveUserData {
+                        Client.showAlert(hostController: self, title: "Data Retrieval Failure", message: "Failed to retrieve user's data")
                     } else {
                         Client.showAlert(hostController: self, title: "Unknown Error", message: "Unkown error encountered. Please try again later. \n Error Code: \(error!.code)")
                     }

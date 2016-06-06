@@ -17,6 +17,9 @@ class Client : NSObject {
     
     // authentication state
     var sessionID: String? = nil
+    var userID: String? = nil
+    var firstName: String? = nil
+    var lastName: String? = nil
     
     // MARK: Shared Instance
 
@@ -28,7 +31,7 @@ class Client : NSObject {
     }
 
     // MARK: GET
-    func taskForGetMethod(request request: NSMutableURLRequest, completionHandlerForGet: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    func taskForGetMethod(request request: NSMutableURLRequest, usingUdacityApi: Bool, completionHandlerForGet: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
@@ -61,16 +64,17 @@ class Client : NSObject {
                 sendError("No data was returned by the request!")
                 return
             }
- 
+            
+            let results = usingUdacityApi ? data.subdataWithRange(NSMakeRange(5, data.length - 5)) : data
             /* Parse the data and use the data (in the completionHandlerForPost) */
-            self.convertDataWithCompletionHandler(data, completionHandlerForConvertData: completionHandlerForGet)
+            self.convertDataWithCompletionHandler(results, completionHandlerForConvertData: completionHandlerForGet)
         }
 
         return task
     }
     
     // MARK: POST
-    func taskForPostMethod(request request: NSMutableURLRequest, completionHandlerForPOST: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
+    func taskForPostMethod(request request: NSMutableURLRequest, usingUdacityApi: Bool, completionHandlerForPOST: (results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
         /* Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
@@ -106,10 +110,9 @@ class Client : NSObject {
                 return
             }
             
-            let subData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
-            
+            let results = usingUdacityApi ? data.subdataWithRange(NSMakeRange(5, data.length - 5)) : data
             /* Parse the data and use the data (in the completionHandlerForPost) */
-            self.convertDataWithCompletionHandler(subData, completionHandlerForConvertData: completionHandlerForPOST)
+            self.convertDataWithCompletionHandler(results, completionHandlerForConvertData: completionHandlerForPOST)
         }
         
         return task
