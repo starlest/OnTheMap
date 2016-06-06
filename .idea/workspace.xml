@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9efd15ca-816b-4d59-8d9f-e540dca48292" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController+UI.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/OnTheMap.iml" afterPath="$PROJECT_DIR$/.idea/OnTheMap.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/OnTheMap.xcodeproj/xcuserdata/edwinchia.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/OnTheMap/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/InformationPosting2ViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/InformationPosting2ViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/Client+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/Client+Helpers.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController+Helpers.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController.swift" afterPath="$PROJECT_DIR$/OnTheMap/InformationPostingViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/MapTabViewController+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/MapTabViewController+Helpers.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnTheMap/TableTabViewController+Helpers.swift" afterPath="$PROJECT_DIR$/OnTheMap/TableTabViewController+Helpers.swift" />
     </list>
     <ignored path="OnTheMap.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,39 +32,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Client+Convenience.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Convenience.swift">
+      <file leaf-file-name="MapTabViewController+Helpers.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OnTheMap/MapTabViewController+Helpers.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding>
-                <element signature="e#4759#5912#0" expanded="false" />
-                <marker date="1465113283000" expanded="false" signature="4257:4704" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentLocation.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/StudentLocation.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-              <folding>
-                <marker date="1465107971000" expanded="true" signature="1039:1041" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client+Constants.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Constants.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-              <folding>
-                <marker date="1465113293000" expanded="true" signature="2802:2905" ph="{...}" />
-              </folding>
+            <state relative-caret-position="737">
+              <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,11 +52,13 @@
       <list>
         <option value="$PROJECT_DIR$/OnTheMap/LoginViewController+UIConfigurations.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/Client.swift" />
-        <option value="$PROJECT_DIR$/OnTheMap/Client+Helpers.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/LoginViewController.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/Client+Convenience.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/StudentLocation.swift" />
         <option value="$PROJECT_DIR$/OnTheMap/Client+Constants.swift" />
+        <option value="$PROJECT_DIR$/OnTheMap/Client+Helpers.swift" />
+        <option value="$PROJECT_DIR$/OnTheMap/TableTabViewController+Helpers.swift" />
+        <option value="$PROJECT_DIR$/OnTheMap/MapTabViewController+Helpers.swift" />
       </list>
     </option>
   </component>
@@ -157,6 +137,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View Controllers" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TableTab" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OnTheMap" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View Controllers" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MapTab" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -286,10 +310,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="140" y="43" width="1400" height="932" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -314,7 +338,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -356,8 +380,7 @@
         <state relative-caret-position="364">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1465145266000" expanded="true" signature="297:810" ph="{...}" />
-            <marker date="1465145266000" expanded="true" signature="5924:5930" ph="{...}" />
+            <marker date="1465207129000" expanded="true" signature="5992:5998" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -409,8 +432,7 @@
         <state relative-caret-position="364">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1465145266000" expanded="true" signature="297:810" ph="{...}" />
-            <marker date="1465145266000" expanded="true" signature="5924:5930" ph="{...}" />
+            <marker date="1465207129000" expanded="true" signature="5992:5998" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -431,17 +453,6 @@
         <state relative-caret-position="1414">
           <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Helpers.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1302">
-          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <marker date="1465145266000" expanded="true" signature="297:810" ph="{...}" />
-            <marker date="1465145266000" expanded="true" signature="5924:5930" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -486,6 +497,48 @@
           <folding>
             <marker date="1465113293000" expanded="true" signature="2802:2905" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/Client+Helpers.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="94" column="39" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
+          <folding>
+            <marker date="1465207129000" expanded="true" signature="5992:5998" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/TableTabViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/TableTabViewController+Helpers.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/MapTabViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnTheMap/MapTabViewController+Helpers.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

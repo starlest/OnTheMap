@@ -28,8 +28,6 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
     
     var activityView: UIActivityIndicatorView!
     
-    var cascadeDismissViewController: Bool = false
-    
     /* MARK: Lifecycle */
     
     override func viewDidLoad() {
@@ -43,9 +41,6 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         suscribeToKeyboardNotifications()
-        if cascadeDismissViewController {
-            dismissViewControllerAnimated(false, completion: nil)
-        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -85,5 +80,9 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
     }
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
+        if !hasUserEnteredAURL() {
+            Client.showAlert(hostController: self, title: "Invalid URL", message: "Please enter a URL.")
+            return
+        }
     }
 }

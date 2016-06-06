@@ -10,25 +10,12 @@ import MapKit
 
 extension InformationPostingViewController {
     
-    func setUpActivityView() {
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-        activityView.center = view.center
-        view.addSubview(activityView)
-    }
-    
-    func setUIEnabled(enabled: Bool) {
-        cancelButton.enabled = enabled
-        locationTextField.enabled = enabled
-        findOnTheMapButton.enabled = enabled
-        if !enabled {
-            activityView.startAnimating()
-        } else {
-            activityView.stopAnimating()
-        }
-    }
-    
     func hasUserEnteredALocation() -> Bool {
         return locationTextField.text != "" && locationTextField.text != "Enter Your Location Here"
+    }
+    
+    func hasUserEnteredAURL() -> Bool {
+        return urlTextField.text != "" && urlTextField.text != "Enter a Link to Share"
     }
     
     func findLocationOnMap() {
@@ -54,24 +41,5 @@ extension InformationPostingViewController {
                 self.mapView.showAnnotations([annotation], animated: true)
             })
         }
-    }
-    
-    private func swapUI() {
-        cancelButton.tintColor = UIColor.whiteColor()
-        
-        firstLabel.hidden = true
-        secondLabel.hidden = true
-        thirdLabel.hidden = true
-        locationTextField.hidden = true
-        findOnTheMapButton.hidden = true
-        
-        topContainer.backgroundColor = UIColor.blueColor()
-        bottomContainer.backgroundColor = UIColor.blueColor()
-        
-        urlTextField.hidden = false
-        mapView.hidden = false
-        submitButton.hidden = false
-        
-        unsuscribeToKeyboardNotifications()
     }
 }

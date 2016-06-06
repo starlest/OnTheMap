@@ -47,8 +47,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
             endingLineNumber = "13"
-            landmarkName = "createUdacityURLFromParameters(_:withPathExtension:)"
-            landmarkType = "5">
+            landmarkName = "Client"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/InformationPostingViewController+Helpers.swift"
-            timestampString = "486887948.887998"
+            timestampString = "486900287.364999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "findLocationOnMap()"
             landmarkType = "5">
          </BreakpointContent>
@@ -160,6 +160,22 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "InformationPostingViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTheMap/TabViewController.swift"
+            timestampString = "486901198.529284"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "TabViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>

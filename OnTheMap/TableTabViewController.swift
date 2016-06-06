@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableTabViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TableTabViewController: TabViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: Properties
     
@@ -18,9 +18,7 @@ class TableTabViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let cellReuseIdentifier = "cell"
     @IBOutlet weak var tableView: UITableView!
-    
-    var activityView: UIActivityIndicatorView!
-    
+
     var studentLocations: [StudentLocation] {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.studentLocations
@@ -39,13 +37,25 @@ class TableTabViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidAppear(animated)
         downloadUserLocations()
     }
-    
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        activityView.center = view.center
-    }
 
     // MARK: Protocols
 
+    override func enableUI(enabled: Bool) {
+        logoutButton.enabled = enabled
+        pinButton.enabled = enabled
+        refreshButton.enabled = enabled
+        tableView.alpha = enabled ? 1.0 : 0.5
+        if enabled {
+            activityView.stopAnimating()
+        } else {
+            activityView.startAnimating()
+        }
+    }
+    
+    override func reloadDataDisplayed() {
+        self.tableView.reloadData()
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentLocations.count
     }

@@ -10,6 +10,8 @@ import Foundation
 
 extension Client {
     
+    // MARK: URL Helper Methods
+    
     func createUdacityURLFromParameters(parameters: [String:AnyObject], withPathExtension: String? = nil) -> NSURL {
 
         let components = NSURLComponents()
@@ -55,6 +57,8 @@ extension Client {
         }
     }
     
+    // MARK: Other Helper Methods
+    
     func convertDataWithCompletionHandler(data: NSData, completionHandlerForConvertData: (result: AnyObject!, error: NSError?) -> Void) {
         
         var parsedResult: AnyObject!
@@ -88,7 +92,7 @@ extension Client {
         hostController.presentViewController(alert, animated: true, completion: nil)
     }
     
-    static func attemptToLogOut(hostController hostController: UIViewController, completionHandler: (success: Bool, error: NSError?) -> Void) {
+    func attemptToLogOutWithController(hostController: UIViewController, completionHandler: (success: Bool, error: NSError?) -> Void) {
         let alert = UIAlertController(title: nil, message: "Confirm logging out?", preferredStyle: .ActionSheet)
         
         let yesAlertAction = UIAlertAction(title: "Yes", style: .Default, handler: { (UIAlertAction) in

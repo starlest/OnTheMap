@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapTabViewController: UIViewController, MKMapViewDelegate {
+class MapTabViewController: TabViewController, MKMapViewDelegate {
 
     // MARK: Properties
     
@@ -17,8 +17,6 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var pinButton: UIBarButtonItem!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
-    
-    var activityView: UIActivityIndicatorView!
     
     var studentLocations: [StudentLocation] {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -38,11 +36,26 @@ class MapTabViewController: UIViewController, MKMapViewDelegate {
         downloadUserLocations()
     }
     
-    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
-        activityView.center = view.center
+    // MARK: Protocols
+    
+    override func enableUI(enabled: Bool) {
+        logoutButton.enabled = enabled
+        pinButton.enabled = enabled
+        refreshButton.enabled = enabled
+        mapView.alpha = enabled ? 1.0 : 0.5
+        if enabled {
+            self.activityView.stopAnimating()
+        } else {
+            self.activityView.startAnimating()
+        }
     }
     
-    // MARK: Protocols
+    override func reloadDataDisplayed() {
+        mapView.removeAnnotations(mapView.annotations)
+        for studentLocaton in self.studentLocations {
+            mapView.addAnnotation(studentLocaton)
+        }
+    }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
