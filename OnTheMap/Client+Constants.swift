@@ -28,6 +28,7 @@ extension Client {
     
     // MARK: Parse Parameter Values
     struct ParseParameterValues {
+        static let updatedAtAscending = "-updatedAt"
     }
     
     // MARK: Parse Methods

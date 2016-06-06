@@ -11,7 +11,8 @@ extension Client {
     func getStudentLocations(completionHandlerForGet: (success: Bool, error: NSError?) -> Void) {
 
         let parameters = [
-            ParseParameterKeys.Limit : "100"
+            ParseParameterKeys.Limit : "100",
+            ParseParameterKeys.Order :  ParseParameterValues.updatedAtAscending
         ]
         
         let htmlHeaderFields = [
