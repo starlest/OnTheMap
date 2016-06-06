@@ -10,10 +10,8 @@ import Foundation
 
 extension Client {
     
-    // MARK: URL Helper Methods
-    
     func createUdacityURLFromParameters(parameters: [String:AnyObject], withPathExtension: String? = nil) -> NSURL {
-
+        
         let components = NSURLComponents()
         components.scheme = UdacityConstants.ApiScheme
         components.host = UdacityConstants.ApiHost
@@ -51,13 +49,11 @@ extension Client {
         for (forHTTPHeaderField, value) in htmlHeaderFields {
             request.addValue(value, forHTTPHeaderField: forHTTPHeaderField)
         }
-
+        
         if let jsonBody = withJsonBody {
             request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
         }
     }
-    
-    // MARK: Other Helper Methods
     
     func convertDataWithCompletionHandler(data: NSData, completionHandlerForConvertData: (result: AnyObject!, error: NSError?) -> Void) {
         
@@ -70,50 +66,6 @@ extension Client {
         }
         
         completionHandlerForConvertData(result: parsedResult, error: nil)
-    }
-    
-    func isLoggedInThroughFacebook() -> Bool {
-        return FBSDKAccessToken.currentAccessToken() != nil
-    }
-    
-    func attemptToLogoutFacebook() {
-        if (isLoggedInThroughFacebook()) {
-            let loginManager = FBSDKLoginManager()
-            loginManager.logOut()
-        }
-    }
-    
-    static func showAlert(hostController hostController: UIViewController, title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let alertAction = UIAlertAction(title: "Dimiss", style: .Default, handler: { (UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: nil)
-        })
-        alert.addAction(alertAction)
-        hostController.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func attemptToLogOutWithController(hostController: UIViewController, completionHandler: (success: Bool, error: NSError?) -> Void) {
-        let alert = UIAlertController(title: nil, message: "Confirm logging out?", preferredStyle: .ActionSheet)
-        
-        let yesAlertAction = UIAlertAction(title: "Yes", style: .Default, handler: { (UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: nil)
-            Client.sharedInstance().attemptToEndSession({ (success, error) in
-                if success {
-                    completionHandler(success: true, error: nil)
-                } else {
-                    completionHandler(success: false, error: error)
-                }
-            })
-        })
-        
-        let noAlertAction = UIAlertAction(title: "No", style: .Default, handler: { (UIAlertAction) in
-            alert.dismissViewControllerAnimated(true, completion: nil)
-            completionHandler(success: false, error: nil)
-        })
-        
-        alert.addAction(yesAlertAction)
-        alert.addAction(noAlertAction)
-        hostController.presentViewController(alert, animated: true, completion: nil)
     }
     
     func storeStudentLocations(studentLocations: [[String:AnyObject]]) {
@@ -137,4 +89,25 @@ extension Client {
             appDelegate.studentLocations.append(studentLocation)
         }
     }
+    
+    func isLoggedInThroughFacebook() -> Bool {
+        return FBSDKAccessToken.currentAccessToken() != nil
+    }
+    
+    func attemptToLogoutFacebook() {
+        if (isLoggedInThroughFacebook()) {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+    }
+        
+    static func showAlert(hostController hostController: UIViewController, title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertAction = UIAlertAction(title: "Dimiss", style: .Default, handler: { (UIAlertAction) in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        })
+        alert.addAction(alertAction)
+        hostController.presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }

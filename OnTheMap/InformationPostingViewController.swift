@@ -48,7 +48,6 @@ class InformationPostingViewController: UIViewController, UITextFieldDelegate, M
         unsuscribeToKeyboardNotifications()
     }
     
-
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
         activityView.center = view.center
     }
