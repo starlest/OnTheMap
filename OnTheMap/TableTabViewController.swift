@@ -71,7 +71,8 @@ class TableTabViewController: TabViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let studentLocation = studentLocations[indexPath.row]
-        UIApplication.sharedApplication().openURL(NSURL(string: studentLocation.mediaURL)!)
+        let url = NSURL(string: studentLocation.mediaURL)!
+        Client.attemptToOpenURL(hostController: self, url: url)
     }
     
     // MARK: Actions

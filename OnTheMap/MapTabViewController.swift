@@ -82,7 +82,8 @@ class MapTabViewController: TabViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         /* Opens the user's specified URL in Safari when detail disclosure info button is pressed */
         let studentLocation = view.annotation as! StudentLocation
-        UIApplication.sharedApplication().openURL(NSURL(string: studentLocation.mediaURL)!)
+        let url = NSURL(string: studentLocation.mediaURL)!
+        Client.attemptToOpenURL(hostController: self, url: url)
     }
     
     // MARK: Actions

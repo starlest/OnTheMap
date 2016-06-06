@@ -98,6 +98,12 @@ extension Client {
             loginManager.logOut()
         }
     }
+    
+    static func attemptToOpenURL(hostController hostController: UIViewController, url: NSURL) {
+        if !UIApplication.sharedApplication().openURL(url) {
+            showAlert(hostController: hostController, title: "Invalid URL", message: "Failed to open URL.")
+        }
+    }
         
     static func showAlert(hostController hostController: UIViewController, title: String, message: String, dimissHostController: Bool = false) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
