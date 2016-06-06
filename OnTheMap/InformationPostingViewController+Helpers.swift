@@ -45,16 +45,7 @@ extension InformationPostingViewController {
     }
     
     func attemptToPostLocation() {
-        let uniqueKey = Client.sharedInstance().userID!
-        let firstName = Client.sharedInstance().firstName!
-        let lastName = Client.sharedInstance().lastName!
-        let mapString = locationTextField.text!
-        let mediaURL = urlTextField.text!
-        let latitude = (placeMark?.location?.coordinate.latitude)! as Double
-        let longitude = (placeMark?.location?.coordinate.longitude)! as Double
-        
-        let studentLocation = StudentLocation(objectId: nil, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
-        
+        let studentLocation = getStudentLocation()
         Client.sharedInstance().postLocation(studentLocation) { (success, error) in
             performUIUpdatesOnMain({
                 if success {
@@ -64,5 +55,17 @@ extension InformationPostingViewController {
                 }
             })
         }
+    }
+    
+    func getStudentLocation() -> StudentLocation {
+        let uniqueKey = Client.sharedInstance().userID!
+        let firstName = Client.sharedInstance().firstName!
+        let lastName = Client.sharedInstance().lastName!
+        let mapString = locationTextField.text!
+        let mediaURL = urlTextField.text!
+        let latitude = (placeMark?.location?.coordinate.latitude)! as Double
+        let longitude = (placeMark?.location?.coordinate.longitude)! as Double
+        
+        return StudentLocation(objectId: nil, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
     }
 }

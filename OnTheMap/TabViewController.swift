@@ -60,7 +60,7 @@ class TabViewController: UIViewController, TabViewControllerProtocol {
         Client.sharedInstance().attemptToLogOutWithController(self) { (success, error) in
             performUIUpdatesOnMain({
                 if success {
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self.tabBarController?.dismissViewControllerAnimated(true, completion: nil)
                 }
                 else {
                     if let error = error {
