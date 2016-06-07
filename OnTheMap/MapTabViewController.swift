@@ -53,13 +53,16 @@ class MapTabViewController: TabViewController, MKMapViewDelegate {
     override func reloadDataDisplayed() {
         mapView.removeAnnotations(mapView.annotations)
         for studentLocaton in self.studentLocations {
-            mapView.addAnnotation(studentLocaton)
+            let title = studentLocaton.firstName + " " + studentLocaton.lastName
+            let subtitle = studentLocaton.mediaURL
+            let annotation = StudentLocationAnnotation(title: title, subtitle: subtitle, latitude: studentLocaton.latitude, longitude: studentLocaton.longitude)
+            mapView.addAnnotation(annotation)
         }
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
-        if let annotation = annotation as? StudentLocation {
+        if let annotation = annotation as? StudentLocationAnnotation {
             
             let identifier = "pin"
             var view: MKPinAnnotationView

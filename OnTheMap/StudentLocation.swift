@@ -8,7 +8,7 @@
 
 import MapKit
 
-class StudentLocation: NSObject, MKAnnotation {
+struct StudentLocation {
     
     let objectId: String?
     let uniqueKey: String
@@ -16,25 +16,62 @@ class StudentLocation: NSObject, MKAnnotation {
     let lastName: String
     let mapString: String
     let mediaURL: String
-    let coordinate: CLLocationCoordinate2D
+    let latitude: Double
+    let longitude: Double
     
-    init(objectId: String?, uniqueKey: String, firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double) {
-        self.objectId = objectId
-        self.uniqueKey = uniqueKey
-        self.firstName = firstName
-        self.lastName = lastName
-        self.mapString = mapString
-        self.mediaURL = mediaURL
-        self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    init?(studentLocation: [String:AnyObject]) {
         
-        super.init()
-    }
-    
-    var title: String? {
-        return firstName + " " + lastName
-    }
-    
-    var subtitle: String? {
-        return mediaURL
+        /*
+         * Check if the dictionary provides the required information in the right format; fail the initialiser otherwise
+         * and store them using the same keys as the ParseJSONReponseKeys 
+         */
+        
+        if let objectId = studentLocation[Client.ParseJSONResponseKeys.ObjectId] as? String? {
+            self.objectId = objectId
+        } else {
+            return nil
+        }
+        
+        if let uniqueKey = studentLocation[Client.ParseJSONResponseKeys.UniqueKey] as? String {
+            self.uniqueKey = uniqueKey
+        } else {
+            return nil
+        }
+        
+        if let firstName = studentLocation[Client.ParseJSONResponseKeys.FirstName] as? String {
+            self.firstName = firstName
+        } else {
+            return nil
+        }
+        
+        if let lastName = studentLocation[Client.ParseJSONResponseKeys.LastName] as? String {
+            self.lastName = lastName
+        } else {
+            return nil
+        }
+        
+        if let mapString = studentLocation[Client.ParseJSONResponseKeys.MapString] as? String {
+            self.mapString = mapString
+        } else {
+            return nil
+        }
+        
+        if let mediaURL = studentLocation[Client.ParseJSONResponseKeys.MediaURL] as? String {
+            self.mediaURL = mediaURL
+        } else {
+            return nil
+        }
+        
+        if let latitude = studentLocation[Client.ParseJSONResponseKeys.Latitude] as? Double  {
+            self.latitude = latitude
+        } else {
+            return nil
+        }
+        
+        if let longitude = studentLocation[Client.ParseJSONResponseKeys.Longitude] as? Double  {
+            self.longitude = longitude
+        } else {
+            return nil
+        }
     }
 }

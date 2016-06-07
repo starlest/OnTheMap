@@ -63,7 +63,7 @@ class TableTabViewController: TabViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier)!
         let studentLocation = studentLocations[indexPath.row]
-        cell.textLabel?.text = studentLocation.title
+        cell.textLabel?.text = studentLocation.firstName + " " + studentLocation.lastName
         cell.detailTextLabel?.text = studentLocation.mediaURL
         cell.imageView?.image = UIImage(named: "pin")
         return cell

@@ -109,4 +109,17 @@ extension Client {
         static let InvalidLoginCredentials = 403
         static let FailedToRetrieveUserData = 2
     }
+    
+    // MARK: StudentLocation Keys
+    struct StudentLocationKeys {
+        static let objectId = "objectId"
+        static let uniqueKey = "objectId"
+        static let firstName = "objectId"
+        static let lastName = "objectId"
+        static let mapString = "objectId"
+        static let mediaURL = "objectId"
+        static let latitude = "latitude"
+        static let longitude = "longitude"
+    }
+    
 }

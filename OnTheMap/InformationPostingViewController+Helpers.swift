@@ -66,6 +66,16 @@ extension InformationPostingViewController {
         let latitude = (placeMark?.location?.coordinate.latitude)! as Double
         let longitude = (placeMark?.location?.coordinate.longitude)! as Double
         
-        return StudentLocation(objectId: nil, uniqueKey: uniqueKey, firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        var dictionary = [String:AnyObject]()
+        dictionary[Client.ParseJSONResponseKeys.ObjectId] = nil
+        dictionary[Client.ParseJSONResponseKeys.UniqueKey] = uniqueKey
+        dictionary[Client.ParseJSONResponseKeys.FirstName] = firstName
+        dictionary[Client.ParseJSONResponseKeys.LastName] = lastName
+        dictionary[Client.ParseJSONResponseKeys.MapString] = mapString
+        dictionary[Client.ParseJSONResponseKeys.MediaURL] = mediaURL
+        dictionary[Client.ParseJSONResponseKeys.Latitude] = latitude
+        dictionary[Client.ParseJSONResponseKeys.Longitude] = longitude
+        
+        return StudentLocation(studentLocation: dictionary)!
     }
 }

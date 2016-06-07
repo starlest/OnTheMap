@@ -107,7 +107,7 @@ extension Client {
             HTMLHeaderFields.ContentType : HTMLHeaderValues.ApplicationJSON
         ]
         
-        let jsonBody = "{\"\(ParseJSONResponseKeys.UniqueKey)\": \"\(studentLocation.uniqueKey)\", \"\(ParseJSONResponseKeys.FirstName)\": \"\(studentLocation.firstName)\", \"\(ParseJSONResponseKeys.LastName)\": \"\(studentLocation.lastName)\",\"\(ParseJSONResponseKeys.MapString)\": \"\(studentLocation.mapString)\", \"\(ParseJSONResponseKeys.MediaURL)\": \"\(studentLocation.mediaURL)\",\"\(ParseJSONResponseKeys.Latitude)\": \(studentLocation.coordinate.latitude), \"\(ParseJSONResponseKeys.Longitude)\": \(studentLocation.coordinate.longitude)}"
+        let jsonBody = "{\"\(ParseJSONResponseKeys.UniqueKey)\": \"\(studentLocation.uniqueKey)\", \"\(ParseJSONResponseKeys.FirstName)\": \"\(studentLocation.firstName)\", \"\(ParseJSONResponseKeys.LastName)\": \"\(studentLocation.lastName)\",\"\(ParseJSONResponseKeys.MapString)\": \"\(studentLocation.mapString)\", \"\(ParseJSONResponseKeys.MediaURL)\": \"\(studentLocation.mediaURL)\",\"\(ParseJSONResponseKeys.Latitude)\": \(studentLocation.latitude), \"\(ParseJSONResponseKeys.Longitude)\": \(studentLocation.longitude)}"
         
         let request = NSMutableURLRequest(URL: createParseURLFromParameters(parameters, withPathExtension: ParseMethods.StudentLocation))
         setRequestHTTPSettings(request, method: "POST", htmlHeaderFields: htmlHeaderFields, withJsonBody: jsonBody)
